@@ -17,7 +17,6 @@ apis:
     properties:
       - type: Documentation
         url: https://www.loc.gov/apis/
-    overlays: []
     aid: library-of-congress:library-of-congress-api
 common:
   - type: Portal
