@@ -8,9 +8,9 @@ description: >-
 type: Contract
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
+  - Cultural Heritage
   - Federal Government
   - Library
-  - Cultural Heritage
 access: 3rd-Party
 url: https://raw.githubusercontent.com/api-evangelist/library-of-congress/refs/heads/main/apis.yml
 created: '2024-01-01'
@@ -24,8 +24,8 @@ apis:
       of the Library of Congress, including books, photographs, maps, and more.
     humanURL: https://www.loc.gov/apis/
     tags:
-      - Library
       - Collections
+      - Library
       - Metadata
     properties:
       - url: https://www.loc.gov/apis/
