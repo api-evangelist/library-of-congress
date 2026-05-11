@@ -91,6 +91,22 @@ common:
     url: https://www.loc.gov/apis/json-and-yaml-responses/
   - type: GitHubOrganization
     url: https://github.com/LibraryOfCongress
+  - type: Integrations
+    url: https://www.loc.gov/apps
+integrations:
+  - name: Facebook
+  - name: Copy Link
+  - name: Library of Congress Facebook
+  - name: Library of Congress X
+  - name: Library of Congress YouTube
+  - name: Library of Congress Pinterest
+  - name: Library of Congress Flickr
+  - name: Library of Congress Instagram
+  - name: Library of Congress iTunesU
+  - name: Library of Congress LinkedIn
+  - name: Email
+  - name: Congress.gov
+  - name: United States Copyright Office
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
