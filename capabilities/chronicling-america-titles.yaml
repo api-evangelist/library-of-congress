@@ -1,0 +1,164 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Library of Congress Chronicling America API — Titles
+  description: 'Library of Congress Chronicling America API — Titles. 3 operations. Lead operation: Get Title. Self-contained
+    Naftiko capability covering one Library Of Congress business surface.'
+  tags:
+  - Library Of Congress
+  - Titles
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    LIBRARY_OF_CONGRESS_API_KEY: LIBRARY_OF_CONGRESS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: chronicling-america-titles
+    baseUri: https://chroniclingamerica.loc.gov
+    description: Library of Congress Chronicling America API — Titles business capability. Self-contained, no shared references.
+    resources:
+    - name: lccn-lccn}.json
+      path: /lccn/{lccn}.json
+      operations:
+      - name: gettitle
+        method: GET
+        description: Get Title
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: lccn
+          in: path
+          type: string
+          description: Library of Congress Control Number.
+          required: true
+    - name: newspapers.json
+      path: /newspapers.json
+      operations:
+      - name: listnewspapers
+        method: GET
+        description: List Newspapers
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: search-titles-results
+      path: /search/titles/results/
+      operations:
+      - name: searchtitles
+        method: GET
+        description: Search Titles
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: terms
+          in: query
+          type: string
+        - name: state
+          in: query
+          type: string
+        - name: format
+          in: query
+          type: string
+        - name: rows
+          in: query
+          type: integer
+  exposes:
+  - type: rest
+    namespace: chronicling-america-titles-rest
+    port: 8080
+    description: REST adapter for Library of Congress Chronicling America API — Titles. One Spectral-compliant resource per
+      consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/lccn/lccn-json
+      name: lccn-lccn-json
+      description: REST surface for lccn-lccn}.json.
+      operations:
+      - method: GET
+        name: gettitle
+        description: Get Title
+        call: chronicling-america-titles.gettitle
+        with:
+          lccn: rest.lccn
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/newspapers-json
+      name: newspapers-json
+      description: REST surface for newspapers.json.
+      operations:
+      - method: GET
+        name: listnewspapers
+        description: List Newspapers
+        call: chronicling-america-titles.listnewspapers
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/search/titles/results
+      name: search-titles-results
+      description: REST surface for search-titles-results.
+      operations:
+      - method: GET
+        name: searchtitles
+        description: Search Titles
+        call: chronicling-america-titles.searchtitles
+        with:
+          terms: rest.terms
+          state: rest.state
+          format: rest.format
+          rows: rest.rows
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: chronicling-america-titles-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Library of Congress Chronicling America API — Titles. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: get-title
+      description: Get Title
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: chronicling-america-titles.gettitle
+      with:
+        lccn: tools.lccn
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-newspapers
+      description: List Newspapers
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: chronicling-america-titles.listnewspapers
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: search-titles
+      description: Search Titles
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: chronicling-america-titles.searchtitles
+      with:
+        terms: tools.terms
+        state: tools.state
+        format: tools.format
+        rows: tools.rows
+      outputParameters:
+      - type: object
+        mapping: $.

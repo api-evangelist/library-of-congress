@@ -1,0 +1,73 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Library of Congress Congress.gov API — Congressional Record
+  description: 'Library of Congress Congress.gov API — Congressional Record. 1 operations. Lead operation: List Congressional
+    Record. Self-contained Naftiko capability covering one Library Of Congress business surface.'
+  tags:
+  - Library Of Congress
+  - Congressional Record
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    LIBRARY_OF_CONGRESS_API_KEY: LIBRARY_OF_CONGRESS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: congress-gov-congressional-record
+    baseUri: https://api.congress.gov/v3
+    description: Library of Congress Congress.gov API — Congressional Record business capability. Self-contained, no shared
+      references.
+    resources:
+    - name: congressional-record
+      path: /congressional-record
+      operations:
+      - name: listcongressionalrecord
+        method: GET
+        description: List Congressional Record
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: api_key
+      value: '{{env.LIBRARY_OF_CONGRESS_API_KEY}}'
+      placement: query
+  exposes:
+  - type: rest
+    namespace: congress-gov-congressional-record-rest
+    port: 8080
+    description: REST adapter for Library of Congress Congress.gov API — Congressional Record. One Spectral-compliant resource
+      per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/congressional-record
+      name: congressional-record
+      description: REST surface for congressional-record.
+      operations:
+      - method: GET
+        name: listcongressionalrecord
+        description: List Congressional Record
+        call: congress-gov-congressional-record.listcongressionalrecord
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: congress-gov-congressional-record-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Library of Congress Congress.gov API — Congressional Record. One tool per consumed operation,
+      routed inline through this capability's consumes block.
+    tools:
+    - name: list-congressional-record
+      description: List Congressional Record
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: congress-gov-congressional-record.listcongressionalrecord
+      outputParameters:
+      - type: object
+        mapping: $.

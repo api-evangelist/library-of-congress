@@ -1,0 +1,185 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Library of Congress Congress.gov API — Bills
+  description: 'Library of Congress Congress.gov API — Bills. 3 operations. Lead operation: List Bills. Self-contained Naftiko
+    capability covering one Library Of Congress business surface.'
+  tags:
+  - Library Of Congress
+  - Bills
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    LIBRARY_OF_CONGRESS_API_KEY: LIBRARY_OF_CONGRESS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: congress-gov-bills
+    baseUri: https://api.congress.gov/v3
+    description: Library of Congress Congress.gov API — Bills business capability. Self-contained, no shared references.
+    resources:
+    - name: bill
+      path: /bill
+      operations:
+      - name: listbills
+        method: GET
+        description: List Bills
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: fromDateTime
+          in: query
+          type: string
+        - name: toDateTime
+          in: query
+          type: string
+    - name: bill-congress-billType
+      path: /bill/{congress}/{billType}
+      operations:
+      - name: listbillsbytype
+        method: GET
+        description: List Bills by Congress and Type
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: congress
+          in: path
+          type: integer
+          required: true
+        - name: billType
+          in: path
+          type: string
+          required: true
+    - name: bill-congress-billType-billNumber
+      path: /bill/{congress}/{billType}/{billNumber}
+      operations:
+      - name: getbill
+        method: GET
+        description: Get Bill
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: congress
+          in: path
+          type: integer
+          required: true
+        - name: billType
+          in: path
+          type: string
+          required: true
+        - name: billNumber
+          in: path
+          type: integer
+          required: true
+    authentication:
+      type: apikey
+      key: api_key
+      value: '{{env.LIBRARY_OF_CONGRESS_API_KEY}}'
+      placement: query
+  exposes:
+  - type: rest
+    namespace: congress-gov-bills-rest
+    port: 8080
+    description: REST adapter for Library of Congress Congress.gov API — Bills. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/bill
+      name: bill
+      description: REST surface for bill.
+      operations:
+      - method: GET
+        name: listbills
+        description: List Bills
+        call: congress-gov-bills.listbills
+        with:
+          fromDateTime: rest.fromDateTime
+          toDateTime: rest.toDateTime
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/bill/{congress}/{billtype}
+      name: bill-congress-billtype
+      description: REST surface for bill-congress-billType.
+      operations:
+      - method: GET
+        name: listbillsbytype
+        description: List Bills by Congress and Type
+        call: congress-gov-bills.listbillsbytype
+        with:
+          congress: rest.congress
+          billType: rest.billType
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/bill/{congress}/{billtype}/{billnumber}
+      name: bill-congress-billtype-billnumber
+      description: REST surface for bill-congress-billType-billNumber.
+      operations:
+      - method: GET
+        name: getbill
+        description: Get Bill
+        call: congress-gov-bills.getbill
+        with:
+          congress: rest.congress
+          billType: rest.billType
+          billNumber: rest.billNumber
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: congress-gov-bills-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Library of Congress Congress.gov API — Bills. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: list-bills
+      description: List Bills
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: congress-gov-bills.listbills
+      with:
+        fromDateTime: tools.fromDateTime
+        toDateTime: tools.toDateTime
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-bills-congress-and-type
+      description: List Bills by Congress and Type
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: congress-gov-bills.listbillsbytype
+      with:
+        congress: tools.congress
+        billType: tools.billType
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-bill
+      description: Get Bill
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: congress-gov-bills.getbill
+      with:
+        congress: tools.congress
+        billType: tools.billType
+        billNumber: tools.billNumber
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,81 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Library of Congress Congress.gov API — Laws
+  description: 'Library of Congress Congress.gov API — Laws. 1 operations. Lead operation: List Laws. Self-contained Naftiko
+    capability covering one Library Of Congress business surface.'
+  tags:
+  - Library Of Congress
+  - Laws
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    LIBRARY_OF_CONGRESS_API_KEY: LIBRARY_OF_CONGRESS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: congress-gov-laws
+    baseUri: https://api.congress.gov/v3
+    description: Library of Congress Congress.gov API — Laws business capability. Self-contained, no shared references.
+    resources:
+    - name: law-congress
+      path: /law/{congress}
+      operations:
+      - name: listlaws
+        method: GET
+        description: List Laws
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: congress
+          in: path
+          type: integer
+          required: true
+    authentication:
+      type: apikey
+      key: api_key
+      value: '{{env.LIBRARY_OF_CONGRESS_API_KEY}}'
+      placement: query
+  exposes:
+  - type: rest
+    namespace: congress-gov-laws-rest
+    port: 8080
+    description: REST adapter for Library of Congress Congress.gov API — Laws. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/law/{congress}
+      name: law-congress
+      description: REST surface for law-congress.
+      operations:
+      - method: GET
+        name: listlaws
+        description: List Laws
+        call: congress-gov-laws.listlaws
+        with:
+          congress: rest.congress
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: congress-gov-laws-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Library of Congress Congress.gov API — Laws. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: list-laws
+      description: List Laws
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: congress-gov-laws.listlaws
+      with:
+        congress: tools.congress
+      outputParameters:
+      - type: object
+        mapping: $.

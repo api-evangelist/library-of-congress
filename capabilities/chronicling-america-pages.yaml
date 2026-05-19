@@ -1,0 +1,112 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Library of Congress Chronicling America API — Pages
+  description: 'Library of Congress Chronicling America API — Pages. 1 operations. Lead operation: Search Pages. Self-contained
+    Naftiko capability covering one Library Of Congress business surface.'
+  tags:
+  - Library Of Congress
+  - Pages
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    LIBRARY_OF_CONGRESS_API_KEY: LIBRARY_OF_CONGRESS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: chronicling-america-pages
+    baseUri: https://chroniclingamerica.loc.gov
+    description: Library of Congress Chronicling America API — Pages business capability. Self-contained, no shared references.
+    resources:
+    - name: search-pages-results
+      path: /search/pages/results/
+      operations:
+      - name: searchpages
+        method: GET
+        description: Search Pages
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: andtext
+          in: query
+          type: string
+          description: Phrase to search within page text.
+        - name: state
+          in: query
+          type: string
+          description: U.S. state filter.
+        - name: dateFilterType
+          in: query
+          type: string
+        - name: date1
+          in: query
+          type: string
+        - name: date2
+          in: query
+          type: string
+        - name: format
+          in: query
+          type: string
+        - name: rows
+          in: query
+          type: integer
+        - name: page
+          in: query
+          type: integer
+  exposes:
+  - type: rest
+    namespace: chronicling-america-pages-rest
+    port: 8080
+    description: REST adapter for Library of Congress Chronicling America API — Pages. One Spectral-compliant resource per
+      consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/search/pages/results
+      name: search-pages-results
+      description: REST surface for search-pages-results.
+      operations:
+      - method: GET
+        name: searchpages
+        description: Search Pages
+        call: chronicling-america-pages.searchpages
+        with:
+          andtext: rest.andtext
+          state: rest.state
+          dateFilterType: rest.dateFilterType
+          date1: rest.date1
+          date2: rest.date2
+          format: rest.format
+          rows: rest.rows
+          page: rest.page
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: chronicling-america-pages-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Library of Congress Chronicling America API — Pages. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: search-pages
+      description: Search Pages
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: chronicling-america-pages.searchpages
+      with:
+        andtext: tools.andtext
+        state: tools.state
+        dateFilterType: tools.dateFilterType
+        date1: tools.date1
+        date2: tools.date2
+        format: tools.format
+        rows: tools.rows
+        page: tools.page
+      outputParameters:
+      - type: object
+        mapping: $.

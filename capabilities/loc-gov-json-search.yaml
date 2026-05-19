@@ -1,0 +1,100 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Library of Congress loc.gov JSON API — Search
+  description: 'Library of Congress loc.gov JSON API — Search. 1 operations. Lead operation: Search loc.gov. Self-contained
+    Naftiko capability covering one Library Of Congress business surface.'
+  tags:
+  - Library Of Congress
+  - Search
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    LIBRARY_OF_CONGRESS_API_KEY: LIBRARY_OF_CONGRESS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: loc-gov-json-search
+    baseUri: https://www.loc.gov
+    description: Library of Congress loc.gov JSON API — Search business capability. Self-contained, no shared references.
+    resources:
+    - name: search
+      path: /search/
+      operations:
+      - name: searchall
+        method: GET
+        description: Search loc.gov
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: q
+          in: query
+          type: string
+          description: Search query string.
+        - name: fo
+          in: query
+          type: string
+          description: Response format (json or yaml).
+        - name: c
+          in: query
+          type: integer
+          description: Number of results per page.
+        - name: sp
+          in: query
+          type: integer
+          description: Page number of results.
+        - name: at
+          in: query
+          type: string
+          description: Limit response to specified attributes (comma-separated).
+  exposes:
+  - type: rest
+    namespace: loc-gov-json-search-rest
+    port: 8080
+    description: REST adapter for Library of Congress loc.gov JSON API — Search. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/search
+      name: search
+      description: REST surface for search.
+      operations:
+      - method: GET
+        name: searchall
+        description: Search loc.gov
+        call: loc-gov-json-search.searchall
+        with:
+          q: rest.q
+          fo: rest.fo
+          c: rest.c
+          sp: rest.sp
+          at: rest.at
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: loc-gov-json-search-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Library of Congress loc.gov JSON API — Search. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: search-loc-gov
+      description: Search loc.gov
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: loc-gov-json-search.searchall
+      with:
+        q: tools.q
+        fo: tools.fo
+        c: tools.c
+        sp: tools.sp
+        at: tools.at
+      outputParameters:
+      - type: object
+        mapping: $.
