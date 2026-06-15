@@ -1,0 +1,307 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Library of Congress Congress.gov API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Bills",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Bills",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.congress.gov/v3/bill",
+            "params": [
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fromDateTime",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "toDateTime",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a list of bills sorted by date of latest action."
+        },
+        {
+          "info": {
+            "name": "List Bills by Congress and Type",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.congress.gov/v3/bill/:congress/:billType",
+            "params": [
+              {
+                "name": "congress",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "billType",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List Bills by Congress and Type"
+        },
+        {
+          "info": {
+            "name": "Get Bill",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.congress.gov/v3/bill/:congress/:billType/:billNumber",
+            "params": [
+              {
+                "name": "congress",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "billType",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "billNumber",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Bill"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Members",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Members",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.congress.gov/v3/member",
+            "params": [
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List members of Congress."
+        },
+        {
+          "info": {
+            "name": "Get Member",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.congress.gov/v3/member/:bioguideId",
+            "params": [
+              {
+                "name": "bioguideId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Member"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Committees",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Committees",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.congress.gov/v3/committee",
+            "params": [
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List Committees"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Laws",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Laws",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.congress.gov/v3/law/:congress",
+            "params": [
+              {
+                "name": "congress",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List Laws"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Congressional Record",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Congressional Record",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.congress.gov/v3/congressional-record",
+            "params": [
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List Congressional Record"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

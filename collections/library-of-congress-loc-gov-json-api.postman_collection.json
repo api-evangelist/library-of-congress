@@ -1,0 +1,575 @@
+{
+  "item": [
+    {
+      "id": "4e6a2748-7432-44e8-b3c6-e42f1d889671",
+      "name": "Search",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2da55711-150a-46e7-bdf1-cec90efd4645",
+          "name": "Search loc.gov",
+          "request": {
+            "name": "Search loc.gov",
+            "description": {
+              "content": "Search across the loc.gov website and digital collections.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "search",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>",
+                  "description": "Search query string."
+                },
+                {
+                  "disabled": false,
+                  "key": "fo",
+                  "value": "json",
+                  "description": "Response format (json or yaml)."
+                },
+                {
+                  "disabled": false,
+                  "key": "c",
+                  "value": "25",
+                  "description": "Number of results per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "sp",
+                  "value": "<integer>",
+                  "description": "Page number of results."
+                },
+                {
+                  "disabled": false,
+                  "key": "at",
+                  "value": "<string>",
+                  "description": "Limit response to specified attributes (comma-separated)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "144d2f17-c0ec-4ac5-afd2-a14e002d0c22",
+              "name": "Search results",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "search",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fo",
+                      "value": "json"
+                    },
+                    {
+                      "key": "c",
+                      "value": "25"
+                    },
+                    {
+                      "key": "sp",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "at",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"results\": [\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"date\": \"string\",\n      \"url\": \"http://RL.xzxLGWGXmYM8KnJXPAs1jAn-CUilT6cVXMaITzugcO6FuZVxGxBm\",\n      \"description\": [\n        \"string\",\n        \"string\"\n      ],\n      \"subject\": [\n        \"string\",\n        \"string\"\n      ],\n      \"original_format\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"date\": \"string\",\n      \"url\": \"http://dLlUVDuHRv.wvnxg+xbzPJSGDiIH\",\n      \"description\": [\n        \"string\",\n        \"string\"\n      ],\n      \"subject\": [\n        \"string\",\n        \"string\"\n      ],\n      \"original_format\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"pagination\": {\n    \"current\": 4810,\n    \"total\": 961,\n    \"of\": 2471\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "054e8d39-7cda-45b3-9033-6765ef3a3543",
+      "name": "Collections",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d4365df2-3a80-43ab-9207-5273042c196b",
+          "name": "List Collections",
+          "request": {
+            "name": "List Collections",
+            "description": {
+              "content": "List the Library's digital collections.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "collections",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fo",
+                  "value": "json"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1d2d9c1a-ae9b-47da-b8a0-9a2d1b36226b",
+              "name": "Collections list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "collections",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fo",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"results\": [\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"description\": \"string\",\n      \"url\": \"http://vRAT.jzsbt3F-QSBDmxbps+ks4eIqO3pfTmWH+eGhpwTp5i3OfdG\",\n      \"item_count\": 5475\n    },\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"description\": \"string\",\n      \"url\": \"http://utdIIx.qddAusKe++Fl\",\n      \"item_count\": 6815\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f546d677-287b-40a2-980d-1cc2bd13319d",
+          "name": "Get Collection",
+          "request": {
+            "name": "Get Collection",
+            "description": {
+              "content": "Retrieve metadata and items for a specific collection.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "collections",
+                ":name",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fo",
+                  "value": "json"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) Collection slug."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ede9d1f3-1ba9-43f4-b0f4-5f5b104804ee",
+              "name": "Collection details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "collections",
+                    ":name",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fo",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Collection slug."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"title\": \"string\",\n  \"description\": \"string\",\n  \"url\": \"http://GZPbMwnzbZnvFfIYOKqERCiujiP.mueInBlSZ1oIgLi.8zfPAcsfruCYs7xhRQombI\",\n  \"item_count\": 4069\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "acde4cf1-4e64-4baf-aa96-8778d665f0fe",
+      "name": "Items",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c609c55b-fef8-4ec3-a8e8-a3a56765a39f",
+          "name": "Get Item",
+          "request": {
+            "name": "Get Item",
+            "description": {
+              "content": "Retrieve a single item record.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "item",
+                ":itemId",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fo",
+                  "value": "json"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "itemId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "caa45021-fbf7-47eb-9ecc-a28b342e6036",
+              "name": "Item record",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "item",
+                    ":itemId",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fo",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "itemId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"title\": \"string\",\n  \"date\": \"string\",\n  \"url\": \"https://gJ.hmBaB0rOqU9anO9w4xC1LRCgTgDIRDocNI5tlA.92\",\n  \"description\": [\n    \"string\",\n    \"string\"\n  ],\n  \"subject\": [\n    \"string\",\n    \"string\"\n  ],\n  \"original_format\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "10a1a5d4-1e62-4f6a-bd16-8ba059fe9616",
+      "name": "Resources",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "facd9bb1-9dfb-4779-bd2e-3c4e66dfae17",
+          "name": "Get Resource",
+          "request": {
+            "name": "Get Resource",
+            "description": {
+              "content": "Retrieve a digitized resource record.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "resource",
+                ":resourceId",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fo",
+                  "value": "json"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2598d64a-467d-47f1-a57a-073e03bdd372",
+              "name": "Resource record",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "resource",
+                    ":resourceId",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fo",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"url\": \"https://waETOCTOowqmokSLNIVLOxZDgIjvGzpc.vcfZWZESvNueEqJW3dCbQ\",\n  \"files\": [\n    {\n      \"url\": \"https://RbsxCCvGIwCOVpgfjMiENGSo.doawQC4XPWHES\",\n      \"mimetype\": \"string\"\n    },\n    {\n      \"url\": \"https://JESIiiIoLRvKXntm.emGicFAnd2T3lDIAbuiyw\",\n      \"mimetype\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.loc.gov",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "9e8d1fc8-6247-4eb0-8540-e4a353609314",
+    "name": "Library of Congress loc.gov JSON API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The loc.gov JSON API returns structured JSON or YAML representations of Library of Congress online collections, items, and search results. Append fo=json (or fo=yaml) to most loc.gov URLs to receive a structured response describing the page or resource.\n\nContact Support:\n Name: Library of Congress",
+      "type": "text/plain"
+    }
+  }
+}

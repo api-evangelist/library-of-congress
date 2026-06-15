@@ -1,0 +1,173 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Library of Congress loc.gov JSON API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Search",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search loc.gov",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.loc.gov/search/",
+            "params": [
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Search query string."
+              },
+              {
+                "name": "fo",
+                "value": "",
+                "type": "query",
+                "description": "Response format (json or yaml)."
+              },
+              {
+                "name": "c",
+                "value": "",
+                "type": "query",
+                "description": "Number of results per page."
+              },
+              {
+                "name": "sp",
+                "value": "",
+                "type": "query",
+                "description": "Page number of results."
+              },
+              {
+                "name": "at",
+                "value": "",
+                "type": "query",
+                "description": "Limit response to specified attributes (comma-separated)."
+              }
+            ]
+          },
+          "docs": "Search across the loc.gov website and digital collections."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Collections",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Collections",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.loc.gov/collections/",
+            "params": [
+              {
+                "name": "fo",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List the Library's digital collections."
+        },
+        {
+          "info": {
+            "name": "Get Collection",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.loc.gov/collections/:name/",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Collection slug."
+              },
+              {
+                "name": "fo",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve metadata and items for a specific collection."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Items",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Item",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.loc.gov/item/:itemId/",
+            "params": [
+              {
+                "name": "itemId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "fo",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve a single item record."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Resources",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.loc.gov/resource/:resourceId/",
+            "params": [
+              {
+                "name": "resourceId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "fo",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve a digitized resource record."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

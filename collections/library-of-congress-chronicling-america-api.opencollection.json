@@ -1,0 +1,181 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Library of Congress Chronicling America API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Pages",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search Pages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://chroniclingamerica.loc.gov/search/pages/results/",
+            "params": [
+              {
+                "name": "andtext",
+                "value": "",
+                "type": "query",
+                "description": "Phrase to search within page text."
+              },
+              {
+                "name": "state",
+                "value": "",
+                "type": "query",
+                "description": "U.S. state filter."
+              },
+              {
+                "name": "dateFilterType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "date1",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "date2",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "rows",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search digitized newspaper pages by keyword and facets."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Titles",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search Titles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://chroniclingamerica.loc.gov/search/titles/results/",
+            "params": [
+              {
+                "name": "terms",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "state",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "rows",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search newspaper titles by name, place, or other facets."
+        },
+        {
+          "info": {
+            "name": "Get Title",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://chroniclingamerica.loc.gov/lccn/:lccn.json",
+            "params": [
+              {
+                "name": "lccn",
+                "value": "",
+                "type": "path",
+                "description": "Library of Congress Control Number."
+              }
+            ]
+          },
+          "docs": "Retrieve metadata for a newspaper title by LCCN."
+        },
+        {
+          "info": {
+            "name": "List Newspapers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://chroniclingamerica.loc.gov/newspapers.json"
+          },
+          "docs": "List all newspaper titles with digitized content."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Issues",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Issue",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://chroniclingamerica.loc.gov/lccn/:lccn/:date/ed-:edition.json",
+            "params": [
+              {
+                "name": "lccn",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "date",
+                "value": "",
+                "type": "path",
+                "description": "Issue date in YYYY-MM-DD format."
+              },
+              {
+                "name": "edition",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve metadata for a single issue of a newspaper."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

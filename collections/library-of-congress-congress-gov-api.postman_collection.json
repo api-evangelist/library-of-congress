@@ -1,0 +1,1001 @@
+{
+  "item": [
+    {
+      "id": "b4c6e9c1-4469-45b0-9be1-33215041737c",
+      "name": "Bills",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e0ef1711-85b0-498a-b2c9-88dff3c89ce8",
+          "name": "List Bills",
+          "request": {
+            "name": "List Bills",
+            "description": {
+              "content": "Returns a list of bills sorted by date of latest action.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "bill"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "20"
+                },
+                {
+                  "disabled": false,
+                  "key": "fromDateTime",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "toDateTime",
+                  "value": "<dateTime>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "733ac4ab-adcc-476c-83d8-0a1e4c452043",
+              "name": "List of bills",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bill"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    },
+                    {
+                      "key": "fromDateTime",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "toDateTime",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"bills\": [\n    {\n      \"congress\": 4239,\n      \"number\": \"string\",\n      \"type\": \"string\",\n      \"title\": \"string\",\n      \"originChamber\": \"string\",\n      \"introducedDate\": \"string\",\n      \"latestAction\": {\n        \"actionDate\": \"string\",\n        \"text\": \"string\"\n      },\n      \"url\": \"https://zOymLNvKwleiDWjqovtIzWSDVYHA.rkM6bYLxj2pF+0AHwhJhHSOmycAVREYzB.LEdAUXaP\"\n    },\n    {\n      \"congress\": 9472,\n      \"number\": \"string\",\n      \"type\": \"string\",\n      \"title\": \"string\",\n      \"originChamber\": \"string\",\n      \"introducedDate\": \"string\",\n      \"latestAction\": {\n        \"actionDate\": \"string\",\n        \"text\": \"string\"\n      },\n      \"url\": \"http://udcLL.yuaoFXaO3V8IEtlQFGfWz5.6ocE2.MAfKmzRcLLdvml0\"\n    }\n  ],\n  \"pagination\": {\n    \"count\": 6261,\n    \"next\": \"string\",\n    \"prev\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "815ee212-7666-4b1e-8fc8-631737862e33",
+          "name": "List Bills by Congress and Type",
+          "request": {
+            "name": "List Bills by Congress and Type",
+            "description": {},
+            "url": {
+              "path": [
+                "bill",
+                ":congress",
+                ":billType"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "20"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "congress",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "billType",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3245a881-39f7-4fbc-a4ec-40b1c3637656",
+              "name": "List of bills",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bill",
+                    ":congress",
+                    ":billType"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "congress",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "billType",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"bills\": [\n    {\n      \"congress\": 4239,\n      \"number\": \"string\",\n      \"type\": \"string\",\n      \"title\": \"string\",\n      \"originChamber\": \"string\",\n      \"introducedDate\": \"string\",\n      \"latestAction\": {\n        \"actionDate\": \"string\",\n        \"text\": \"string\"\n      },\n      \"url\": \"https://zOymLNvKwleiDWjqovtIzWSDVYHA.rkM6bYLxj2pF+0AHwhJhHSOmycAVREYzB.LEdAUXaP\"\n    },\n    {\n      \"congress\": 9472,\n      \"number\": \"string\",\n      \"type\": \"string\",\n      \"title\": \"string\",\n      \"originChamber\": \"string\",\n      \"introducedDate\": \"string\",\n      \"latestAction\": {\n        \"actionDate\": \"string\",\n        \"text\": \"string\"\n      },\n      \"url\": \"http://udcLL.yuaoFXaO3V8IEtlQFGfWz5.6ocE2.MAfKmzRcLLdvml0\"\n    }\n  ],\n  \"pagination\": {\n    \"count\": 6261,\n    \"next\": \"string\",\n    \"prev\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3f4e861d-03d5-4f54-b656-c9ff0f1d5483",
+          "name": "Get Bill",
+          "request": {
+            "name": "Get Bill",
+            "description": {},
+            "url": {
+              "path": [
+                "bill",
+                ":congress",
+                ":billType",
+                ":billNumber"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "congress",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "billType",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "billNumber",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0f865266-a51b-4a1f-a896-658f6eb01879",
+              "name": "Bill detail",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bill",
+                    ":congress",
+                    ":billType",
+                    ":billNumber"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "congress",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "billType",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "billNumber",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"congress\": 7657,\n  \"number\": \"string\",\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"originChamber\": \"string\",\n  \"introducedDate\": \"string\",\n  \"latestAction\": {\n    \"actionDate\": \"string\",\n    \"text\": \"string\"\n  },\n  \"url\": \"https://iHQG.laz4F+PsturskXN3WTaR.e3US5rBgKc67cRLtvNCrTKmoaByOTHxTUCpRb4CJNqawH3\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "96727112-d7c6-46e9-a4c6-90d132620ab6",
+      "name": "Members",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "989d2ca3-3e25-43ae-8cea-b37587ae4f3f",
+          "name": "List Members",
+          "request": {
+            "name": "List Members",
+            "description": {
+              "content": "List members of Congress.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "member"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "20"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7c905e5c-7228-4f00-80b9-a0d8c2ff147e",
+              "name": "Members list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "member"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"members\": [\n    {\n      \"bioguideId\": \"string\",\n      \"name\": \"string\",\n      \"state\": \"string\",\n      \"party\": \"string\",\n      \"chamber\": \"string\",\n      \"url\": \"http://wtchCCuQWvgmSXkKNIgnoOKQuKtXHTlFu.tltihDNkVzMjeMmTVu8k5PACxpfTMb46xlKqOFC+ZxkmUOsS.5Keyr\"\n    },\n    {\n      \"bioguideId\": \"string\",\n      \"name\": \"string\",\n      \"state\": \"string\",\n      \"party\": \"string\",\n      \"chamber\": \"string\",\n      \"url\": \"http://dcw.vfhIl-uPPkhBUoCGy9m7c1WX1+oJ8sfjMSLapRoYBhnFfWi-E\"\n    }\n  ],\n  \"pagination\": {\n    \"count\": 7076,\n    \"next\": \"string\",\n    \"prev\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a5431650-484a-44bf-a291-9f93f445da23",
+          "name": "Get Member",
+          "request": {
+            "name": "Get Member",
+            "description": {},
+            "url": {
+              "path": [
+                "member",
+                ":bioguideId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "bioguideId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2203461c-9878-4111-8fe7-8c1bf66c12e3",
+              "name": "Member detail",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "member",
+                    ":bioguideId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "bioguideId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"bioguideId\": \"string\",\n  \"name\": \"string\",\n  \"state\": \"string\",\n  \"party\": \"string\",\n  \"chamber\": \"string\",\n  \"url\": \"https://nppYhRbbqJHc.jsrQJcS0YvKPYPQ5lk3\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "f6eb656d-30e3-463a-9559-cba1fa6d90b3",
+      "name": "Committees",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3f0b63cc-8f7e-466c-b876-1f5958ac9846",
+          "name": "List Committees",
+          "request": {
+            "name": "List Committees",
+            "description": {},
+            "url": {
+              "path": [
+                "committee"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "20"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "28bf7fb0-7828-4a5f-b14e-ba822f9ba004",
+              "name": "Committees list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "committee"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"committees\": [\n    {\n      \"name\": \"string\",\n      \"chamber\": \"string\",\n      \"systemCode\": \"string\",\n      \"url\": \"https://fIwTwQjfZznifciNNwpjRRE.ntwLnQBQX6NKzzpdxo\"\n    },\n    {\n      \"name\": \"string\",\n      \"chamber\": \"string\",\n      \"systemCode\": \"string\",\n      \"url\": \"https://FCGJHfHPKoSjzvXVOtbwXzR.oztvDi1ET3HtRb+NyUdzlmccdce5-YW6\"\n    }\n  ],\n  \"pagination\": {\n    \"count\": 2576,\n    \"next\": \"string\",\n    \"prev\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "f7e3ad35-a1c6-41fa-b53c-4bea58a8891e",
+      "name": "Laws",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ab1f7ef5-5058-4586-b0ad-c718d0607403",
+          "name": "List Laws",
+          "request": {
+            "name": "List Laws",
+            "description": {},
+            "url": {
+              "path": [
+                "law",
+                ":congress"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "20"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "congress",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "24a5f897-1e7c-40f9-9194-d5127966a624",
+              "name": "Laws list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "law",
+                    ":congress"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "congress",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"bills\": [\n    {\n      \"congress\": 4239,\n      \"number\": \"string\",\n      \"type\": \"string\",\n      \"title\": \"string\",\n      \"originChamber\": \"string\",\n      \"introducedDate\": \"string\",\n      \"latestAction\": {\n        \"actionDate\": \"string\",\n        \"text\": \"string\"\n      },\n      \"url\": \"https://zOymLNvKwleiDWjqovtIzWSDVYHA.rkM6bYLxj2pF+0AHwhJhHSOmycAVREYzB.LEdAUXaP\"\n    },\n    {\n      \"congress\": 9472,\n      \"number\": \"string\",\n      \"type\": \"string\",\n      \"title\": \"string\",\n      \"originChamber\": \"string\",\n      \"introducedDate\": \"string\",\n      \"latestAction\": {\n        \"actionDate\": \"string\",\n        \"text\": \"string\"\n      },\n      \"url\": \"http://udcLL.yuaoFXaO3V8IEtlQFGfWz5.6ocE2.MAfKmzRcLLdvml0\"\n    }\n  ],\n  \"pagination\": {\n    \"count\": 6261,\n    \"next\": \"string\",\n    \"prev\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "206f6ac1-0d66-4a9d-8200-f0a4ada042ff",
+      "name": "Congressional Record",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9b6914a5-492c-4e76-9646-c214984201ee",
+          "name": "List Congressional Record",
+          "request": {
+            "name": "List Congressional Record",
+            "description": {},
+            "url": {
+              "path": [
+                "congressional-record"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "20"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a544d579-b53c-4fc5-8ab8-e07aa17c1dd4",
+              "name": "Congressional Record entries",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "congressional-record"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.congress.gov/v3",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "0d96c404-771c-4359-8270-2dba66614662",
+    "name": "Library of Congress Congress.gov API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Congress.gov API provides programmatic access to legislative information from the U.S. Congress, including bills, laws, members, committees, amendments, and Congressional Record content. An API key is required for access.\n\nContact Support:\n Name: Library of Congress",
+      "type": "text/plain"
+    }
+  }
+}

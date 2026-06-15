@@ -1,0 +1,588 @@
+{
+  "item": [
+    {
+      "id": "8d18d1e6-b230-4ced-9a6e-106a4db80190",
+      "name": "Pages",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "088973d8-e1fa-4660-8f58-ecbc3f71a3c5",
+          "name": "Search Pages",
+          "request": {
+            "name": "Search Pages",
+            "description": {
+              "content": "Search digitized newspaper pages by keyword and facets.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "search",
+                "pages",
+                "results",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "andtext",
+                  "value": "<string>",
+                  "description": "Phrase to search within page text."
+                },
+                {
+                  "disabled": false,
+                  "key": "state",
+                  "value": "<string>",
+                  "description": "U.S. state filter."
+                },
+                {
+                  "disabled": false,
+                  "key": "dateFilterType",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "date1",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "date2",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                },
+                {
+                  "disabled": false,
+                  "key": "rows",
+                  "value": "20"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0ef405b4-e2de-429b-937b-00709311e878",
+              "name": "Page search results",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "search",
+                    "pages",
+                    "results",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "andtext",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "state",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dateFilterType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "date1",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "date2",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "rows",
+                      "value": "20"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"id\": \"string\",\n      \"url\": \"https://IroyzCMQkiRkFDkXziv.ptvfrpmQNCHWkGz,Wn7-ZmeDNEK2sny4\",\n      \"title\": \"string\",\n      \"date\": \"string\",\n      \"sequence\": 2526,\n      \"ocr_eng\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"url\": \"https://ByYyAbk.wvyCBYOk6L5GfgOUs-QfKHR95X3UjfKP-f+2kavB\",\n      \"title\": \"string\",\n      \"date\": \"string\",\n      \"sequence\": 6148,\n      \"ocr_eng\": \"string\"\n    }\n  ],\n  \"totalItems\": 8116,\n  \"startIndex\": 3625,\n  \"endIndex\": 3806\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "59a41430-a1b7-4f55-b906-5a62bb8ec39b",
+      "name": "Titles",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "57f2747f-3421-4e30-984c-ac7bde75b777",
+          "name": "Search Titles",
+          "request": {
+            "name": "Search Titles",
+            "description": {
+              "content": "Search newspaper titles by name, place, or other facets.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "search",
+                "titles",
+                "results",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "terms",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "state",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                },
+                {
+                  "disabled": false,
+                  "key": "rows",
+                  "value": "20"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9e71d172-633f-4865-bedd-0a1dabde9844",
+              "name": "Title search results",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "search",
+                    "titles",
+                    "results",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "terms",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "state",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "rows",
+                      "value": "20"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"lccn\": \"string\",\n      \"name\": \"string\",\n      \"place_of_publication\": \"string\",\n      \"start_year\": \"string\",\n      \"end_year\": \"string\",\n      \"url\": \"http://URBPENYErPmKlE.drGICjWh4ny46qR5wEr5zecs+0yqEYTlcJUdcYUK7pQcD3wUyd+98\"\n    },\n    {\n      \"lccn\": \"string\",\n      \"name\": \"string\",\n      \"place_of_publication\": \"string\",\n      \"start_year\": \"string\",\n      \"end_year\": \"string\",\n      \"url\": \"https://XlMepcAOFqgAkvlpJMl.xhWmaADm3g4DacBDBkh1kbQbR.aGG,TpSuTr+f\"\n    }\n  ],\n  \"totalItems\": 1254\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "72f8dcd7-758a-4435-9862-8e68f529d792",
+          "name": "Get Title",
+          "request": {
+            "name": "Get Title",
+            "description": {
+              "content": "Retrieve metadata for a newspaper title by LCCN.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "lccn",
+                "{{lccn}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "aae515ae-3aaa-48f6-af5e-7fb0725bb7b0",
+              "name": "Title metadata",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "lccn",
+                    "{{lccn}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"lccn\": \"string\",\n  \"name\": \"string\",\n  \"place_of_publication\": \"string\",\n  \"start_year\": \"string\",\n  \"end_year\": \"string\",\n  \"url\": \"http://KikZMKTTsx.xslekaF,Hw2QE1CMTt+7OAG\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1d1086ca-5d7f-4f18-966e-6a589642dd8b",
+          "name": "List Newspapers",
+          "request": {
+            "name": "List Newspapers",
+            "description": {
+              "content": "List all newspaper titles with digitized content.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "newspapers.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1e6a5be0-536e-49c7-bef8-7f7bb625b955",
+              "name": "Newspaper list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "newspapers.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"newspapers\": [\n    {\n      \"lccn\": \"string\",\n      \"name\": \"string\",\n      \"place_of_publication\": \"string\",\n      \"start_year\": \"string\",\n      \"end_year\": \"string\",\n      \"url\": \"https://YFdeNLemuMCezN.nnmoA+RrHpoAsrQ-u+qVgMV6CtdEdnnX,HaRshARRmd6RNe8.X4hNEJYzC.yq.\"\n    },\n    {\n      \"lccn\": \"string\",\n      \"name\": \"string\",\n      \"place_of_publication\": \"string\",\n      \"start_year\": \"string\",\n      \"end_year\": \"string\",\n      \"url\": \"http://yWJoZqLuknnOrEPagLfvlTowBItJsgbcM.gtugZ11kXQEtyGux7M6XN0,3UsdxT0lrhZTg7WF3O7G2nsZl1wSH6ALsU23tNhVBmDmtRFm\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "5cebd2a6-0e39-4c4b-9d90-7d9fa66431a0",
+      "name": "Issues",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e944e876-4350-4f94-83df-6277d059a598",
+          "name": "Get Issue",
+          "request": {
+            "name": "Get Issue",
+            "description": {
+              "content": "Retrieve metadata for a single issue of a newspaper.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "lccn",
+                ":lccn",
+                ":date",
+                "ed-{{edition}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "lccn",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "date",
+                  "description": "(Required) Issue date in YYYY-MM-DD format."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "359550a6-cc34-41e7-a39d-773709d12e6f",
+              "name": "Issue metadata",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "lccn",
+                    ":lccn",
+                    ":date",
+                    "ed-{{edition}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "lccn",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "date",
+                      "description": "(Required) Issue date in YYYY-MM-DD format."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"date_issued\": \"string\",\n  \"edition\": 6866,\n  \"title\": {},\n  \"pages\": [\n    {\n      \"id\": \"string\",\n      \"url\": \"https://VjUuQtHiP.dyQYddJnhyjRx1iCE9EgBB-PkiSfvI.dd,JlL8PMwL+t1kdunauGiSgevxmr84C7PI-JeODbwaXj\",\n      \"title\": \"string\",\n      \"date\": \"string\",\n      \"sequence\": 5297,\n      \"ocr_eng\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"url\": \"http://wbuEOAfMcqEMJyAxbjnvE.mylfgAEOEZ+h+nYLmVqJEmfcPjgiHarQowpuxDkMrOYrwJtUxlBaJ.9jMT+37C\",\n      \"title\": \"string\",\n      \"date\": \"string\",\n      \"sequence\": 6896,\n      \"ocr_eng\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://chroniclingamerica.loc.gov",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<integer>",
+      "key": "edition"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) Library of Congress Control Number.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "lccn"
+    }
+  ],
+  "info": {
+    "_postman_id": "2f279000-95dc-47df-b744-a62e28e274a1",
+    "name": "Library of Congress Chronicling America API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Chronicling America API exposes historic American newspapers digitized through the National Digital Newspaper Program, providing search and metadata access to newspaper pages, issues, and titles.\n\nContact Support:\n Name: Library of Congress",
+      "type": "text/plain"
+    }
+  }
+}
