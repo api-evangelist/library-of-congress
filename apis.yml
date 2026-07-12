@@ -78,6 +78,12 @@ apis:
       - type: OpenAPI
         url: openapi/library-of-congress-congress-gov-api-openapi.yml
 common:
+  - type: VulnerabilityDisclosure
+    url: security/library-of-congress-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/library-of-congress-domain-security.yml
+  - type: Authentication
+    url: authentication/library-of-congress-authentication.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/library-of-congress
   - type: Website
@@ -90,6 +96,8 @@ common:
     url: https://github.com/LibraryOfCongress
   - type: Integrations
     url: https://www.loc.gov/apps
+  - url: https://blogs.loc.gov/loc/feed/
+    type: Blog
 integrations:
   - name: Facebook
   - name: Copy Link
