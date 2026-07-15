@@ -78,6 +78,8 @@ apis:
       - type: OpenAPI
         url: openapi/library-of-congress-congress-gov-api-openapi.yml
 common:
+  - type: AgenticAccess
+    url: agentic-access/library-of-congress-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/library-of-congress-vulnerability-disclosure.yml
   - type: DomainSecurity
