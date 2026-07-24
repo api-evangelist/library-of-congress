@@ -1,0 +1,59 @@
+openapi: 3.1.0
+info:
+  title: Library of Congress Chronicling America Bills Resources API
+  description: The Chronicling America API exposes historic American newspapers digitized through the National Digital Newspaper Program, providing search and metadata access to newspaper pages, issues, and titles.
+  version: 1.0.0
+  contact:
+    name: Library of Congress
+    url: https://chroniclingamerica.loc.gov/about/api/
+servers:
+- url: https://chroniclingamerica.loc.gov
+  description: Production
+tags:
+- name: Resources
+paths:
+  /resource/{resourceId}/:
+    get:
+      operationId: getResource
+      summary: Get Resource
+      description: Retrieve a digitized resource record.
+      tags:
+      - Resources
+      parameters:
+      - name: resourceId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: fo
+        in: query
+        schema:
+          type: string
+          default: json
+      responses:
+        '200':
+          description: Resource record
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Resource'
+components:
+  schemas:
+    Resource:
+      type: object
+      properties:
+        id:
+          type: string
+        url:
+          type: string
+          format: uri
+        files:
+          type: array
+          items:
+            type: object
+            properties:
+              url:
+                type: string
+                format: uri
+              mimetype:
+                type: string

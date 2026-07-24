@@ -1,0 +1,83 @@
+openapi: 3.1.0
+info:
+  title: Library of Congress Chronicling America Bills Collections API
+  description: The Chronicling America API exposes historic American newspapers digitized through the National Digital Newspaper Program, providing search and metadata access to newspaper pages, issues, and titles.
+  version: 1.0.0
+  contact:
+    name: Library of Congress
+    url: https://chroniclingamerica.loc.gov/about/api/
+servers:
+- url: https://chroniclingamerica.loc.gov
+  description: Production
+tags:
+- name: Collections
+paths:
+  /collections/:
+    get:
+      operationId: listCollections
+      summary: List Collections
+      description: List the Library's digital collections.
+      tags:
+      - Collections
+      parameters:
+      - name: fo
+        in: query
+        schema:
+          type: string
+          default: json
+      responses:
+        '200':
+          description: Collections list
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CollectionList'
+  /collections/{name}/:
+    get:
+      operationId: getCollection
+      summary: Get Collection
+      description: Retrieve metadata and items for a specific collection.
+      tags:
+      - Collections
+      parameters:
+      - name: name
+        in: path
+        required: true
+        description: Collection slug.
+        schema:
+          type: string
+      - name: fo
+        in: query
+        schema:
+          type: string
+          default: json
+      responses:
+        '200':
+          description: Collection details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Collection'
+components:
+  schemas:
+    Collection:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+        url:
+          type: string
+          format: uri
+        item_count:
+          type: integer
+    CollectionList:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Collection'

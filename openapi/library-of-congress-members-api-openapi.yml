@@ -1,0 +1,111 @@
+openapi: 3.1.0
+info:
+  title: Library of Congress Chronicling America Bills Members API
+  description: The Chronicling America API exposes historic American newspapers digitized through the National Digital Newspaper Program, providing search and metadata access to newspaper pages, issues, and titles.
+  version: 1.0.0
+  contact:
+    name: Library of Congress
+    url: https://chroniclingamerica.loc.gov/about/api/
+servers:
+- url: https://chroniclingamerica.loc.gov
+  description: Production
+tags:
+- name: Members
+paths:
+  /member:
+    get:
+      operationId: listMembers
+      summary: List Members
+      description: List members of Congress.
+      tags:
+      - Members
+      parameters:
+      - $ref: '#/components/parameters/Format'
+      - $ref: '#/components/parameters/Offset'
+      - $ref: '#/components/parameters/Limit'
+      responses:
+        '200':
+          description: Members list
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MemberList'
+  /member/{bioguideId}:
+    get:
+      operationId: getMember
+      summary: Get Member
+      tags:
+      - Members
+      parameters:
+      - name: bioguideId
+        in: path
+        required: true
+        schema:
+          type: string
+      - $ref: '#/components/parameters/Format'
+      responses:
+        '200':
+          description: Member detail
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Member'
+components:
+  schemas:
+    MemberList:
+      type: object
+      properties:
+        members:
+          type: array
+          items:
+            $ref: '#/components/schemas/Member'
+        pagination:
+          $ref: '#/components/schemas/Pagination'
+    Member:
+      type: object
+      properties:
+        bioguideId:
+          type: string
+        name:
+          type: string
+        state:
+          type: string
+        party:
+          type: string
+        chamber:
+          type: string
+        url:
+          type: string
+          format: uri
+    Pagination:
+      type: object
+      properties:
+        count:
+          type: integer
+        next:
+          type: string
+        prev:
+          type: string
+  parameters:
+    Format:
+      name: format
+      in: query
+      schema:
+        type: string
+        enum:
+        - json
+        - xml
+        default: json
+    Limit:
+      name: limit
+      in: query
+      schema:
+        type: integer
+        default: 20
+        maximum: 250
+    Offset:
+      name: offset
+      in: query
+      schema:
+        type: integer
+        default: 0

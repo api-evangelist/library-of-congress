@@ -1,0 +1,105 @@
+openapi: 3.1.0
+info:
+  title: Library of Congress Chronicling America Bills Search API
+  description: The Chronicling America API exposes historic American newspapers digitized through the National Digital Newspaper Program, providing search and metadata access to newspaper pages, issues, and titles.
+  version: 1.0.0
+  contact:
+    name: Library of Congress
+    url: https://chroniclingamerica.loc.gov/about/api/
+servers:
+- url: https://chroniclingamerica.loc.gov
+  description: Production
+tags:
+- name: Search
+paths:
+  /search/:
+    get:
+      operationId: searchAll
+      summary: Search loc.gov
+      description: Search across the loc.gov website and digital collections.
+      tags:
+      - Search
+      parameters:
+      - name: q
+        in: query
+        description: Search query string.
+        schema:
+          type: string
+      - name: fo
+        in: query
+        description: Response format (json or yaml).
+        schema:
+          type: string
+          enum:
+          - json
+          - yaml
+          default: json
+      - name: c
+        in: query
+        description: Number of results per page.
+        schema:
+          type: integer
+          default: 25
+      - name: sp
+        in: query
+        description: Page number of results.
+        schema:
+          type: integer
+      - name: at
+        in: query
+        description: Limit response to specified attributes (comma-separated).
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Search results
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResults'
+components:
+  schemas:
+    Item:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        date:
+          type: string
+        url:
+          type: string
+          format: uri
+        description:
+          type: array
+          items:
+            type: string
+        subject:
+          type: array
+          items:
+            type: string
+        original_format:
+          type: array
+          items:
+            type: string
+    SearchResults:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item'
+        pagination:
+          type: object
+          properties:
+            current:
+              type: integer
+            total:
+              type: integer
+            of:
+              type: integer
+        facets:
+          type: array
+          items:
+            type: object

@@ -1,0 +1,84 @@
+openapi: 3.1.0
+info:
+  title: Library of Congress Chronicling America Bills Committees API
+  description: The Chronicling America API exposes historic American newspapers digitized through the National Digital Newspaper Program, providing search and metadata access to newspaper pages, issues, and titles.
+  version: 1.0.0
+  contact:
+    name: Library of Congress
+    url: https://chroniclingamerica.loc.gov/about/api/
+servers:
+- url: https://chroniclingamerica.loc.gov
+  description: Production
+tags:
+- name: Committees
+paths:
+  /committee:
+    get:
+      operationId: listCommittees
+      summary: List Committees
+      tags:
+      - Committees
+      parameters:
+      - $ref: '#/components/parameters/Format'
+      - $ref: '#/components/parameters/Offset'
+      - $ref: '#/components/parameters/Limit'
+      responses:
+        '200':
+          description: Committees list
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommitteeList'
+components:
+  parameters:
+    Format:
+      name: format
+      in: query
+      schema:
+        type: string
+        enum:
+        - json
+        - xml
+        default: json
+    Limit:
+      name: limit
+      in: query
+      schema:
+        type: integer
+        default: 20
+        maximum: 250
+    Offset:
+      name: offset
+      in: query
+      schema:
+        type: integer
+        default: 0
+  schemas:
+    CommitteeList:
+      type: object
+      properties:
+        committees:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              chamber:
+                type: string
+              systemCode:
+                type: string
+              url:
+                type: string
+                format: uri
+        pagination:
+          $ref: '#/components/schemas/Pagination'
+    Pagination:
+      type: object
+      properties:
+        count:
+          type: integer
+        next:
+          type: string
+        prev:
+          type: string

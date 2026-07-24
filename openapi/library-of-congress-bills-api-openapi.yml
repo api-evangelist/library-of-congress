@@ -1,0 +1,176 @@
+openapi: 3.1.0
+info:
+  title: Library of Congress Chronicling America Bills API
+  description: The Chronicling America API exposes historic American newspapers digitized through the National Digital Newspaper Program, providing search and metadata access to newspaper pages, issues, and titles.
+  version: 1.0.0
+  contact:
+    name: Library of Congress
+    url: https://chroniclingamerica.loc.gov/about/api/
+servers:
+- url: https://chroniclingamerica.loc.gov
+  description: Production
+tags:
+- name: Bills
+paths:
+  /bill:
+    get:
+      operationId: listBills
+      summary: List Bills
+      description: Returns a list of bills sorted by date of latest action.
+      tags:
+      - Bills
+      parameters:
+      - $ref: '#/components/parameters/Format'
+      - $ref: '#/components/parameters/Offset'
+      - $ref: '#/components/parameters/Limit'
+      - name: fromDateTime
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: toDateTime
+        in: query
+        schema:
+          type: string
+          format: date-time
+      responses:
+        '200':
+          description: List of bills
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BillList'
+  /bill/{congress}/{billType}:
+    get:
+      operationId: listBillsByType
+      summary: List Bills by Congress and Type
+      tags:
+      - Bills
+      parameters:
+      - name: congress
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: billType
+        in: path
+        required: true
+        schema:
+          type: string
+          enum:
+          - hr
+          - s
+          - hjres
+          - sjres
+          - hconres
+          - sconres
+          - hres
+          - sres
+      - $ref: '#/components/parameters/Format'
+      - $ref: '#/components/parameters/Offset'
+      - $ref: '#/components/parameters/Limit'
+      responses:
+        '200':
+          description: List of bills
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BillList'
+  /bill/{congress}/{billType}/{billNumber}:
+    get:
+      operationId: getBill
+      summary: Get Bill
+      tags:
+      - Bills
+      parameters:
+      - name: congress
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: billType
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: billNumber
+        in: path
+        required: true
+        schema:
+          type: integer
+      - $ref: '#/components/parameters/Format'
+      responses:
+        '200':
+          description: Bill detail
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Bill'
+components:
+  parameters:
+    Format:
+      name: format
+      in: query
+      schema:
+        type: string
+        enum:
+        - json
+        - xml
+        default: json
+    Limit:
+      name: limit
+      in: query
+      schema:
+        type: integer
+        default: 20
+        maximum: 250
+    Offset:
+      name: offset
+      in: query
+      schema:
+        type: integer
+        default: 0
+  schemas:
+    Bill:
+      type: object
+      properties:
+        congress:
+          type: integer
+        number:
+          type: string
+        type:
+          type: string
+        title:
+          type: string
+        originChamber:
+          type: string
+        introducedDate:
+          type: string
+        latestAction:
+          type: object
+          properties:
+            actionDate:
+              type: string
+            text:
+              type: string
+        url:
+          type: string
+          format: uri
+    Pagination:
+      type: object
+      properties:
+        count:
+          type: integer
+        next:
+          type: string
+        prev:
+          type: string
+    BillList:
+      type: object
+      properties:
+        bills:
+          type: array
+          items:
+            $ref: '#/components/schemas/Bill'
+        pagination:
+          $ref: '#/components/schemas/Pagination'

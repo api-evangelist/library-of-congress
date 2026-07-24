@@ -1,0 +1,104 @@
+openapi: 3.1.0
+info:
+  title: Library of Congress Chronicling America Bills Laws API
+  description: The Chronicling America API exposes historic American newspapers digitized through the National Digital Newspaper Program, providing search and metadata access to newspaper pages, issues, and titles.
+  version: 1.0.0
+  contact:
+    name: Library of Congress
+    url: https://chroniclingamerica.loc.gov/about/api/
+servers:
+- url: https://chroniclingamerica.loc.gov
+  description: Production
+tags:
+- name: Laws
+paths:
+  /law/{congress}:
+    get:
+      operationId: listLaws
+      summary: List Laws
+      tags:
+      - Laws
+      parameters:
+      - name: congress
+        in: path
+        required: true
+        schema:
+          type: integer
+      - $ref: '#/components/parameters/Format'
+      - $ref: '#/components/parameters/Offset'
+      - $ref: '#/components/parameters/Limit'
+      responses:
+        '200':
+          description: Laws list
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LawList'
+components:
+  schemas:
+    LawList:
+      type: object
+      properties:
+        bills:
+          type: array
+          items:
+            $ref: '#/components/schemas/Bill'
+        pagination:
+          $ref: '#/components/schemas/Pagination'
+    Bill:
+      type: object
+      properties:
+        congress:
+          type: integer
+        number:
+          type: string
+        type:
+          type: string
+        title:
+          type: string
+        originChamber:
+          type: string
+        introducedDate:
+          type: string
+        latestAction:
+          type: object
+          properties:
+            actionDate:
+              type: string
+            text:
+              type: string
+        url:
+          type: string
+          format: uri
+    Pagination:
+      type: object
+      properties:
+        count:
+          type: integer
+        next:
+          type: string
+        prev:
+          type: string
+  parameters:
+    Format:
+      name: format
+      in: query
+      schema:
+        type: string
+        enum:
+        - json
+        - xml
+        default: json
+    Limit:
+      name: limit
+      in: query
+      schema:
+        type: integer
+        default: 20
+        maximum: 250
+    Offset:
+      name: offset
+      in: query
+      schema:
+        type: integer
+        default: 0
