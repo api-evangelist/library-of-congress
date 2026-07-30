@@ -6,9 +6,22 @@ description: >-
   the U.S. Congress and the home of the U.S. Copyright Office. The Library publishes a suite of public APIs that expose
   its catalog, digital collections, historic newspapers, and legislative information.
 type: Index
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 position: Producer
 access: Public
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/library-of-congress.png
 tags:
   - Cultural Heritage
   - Federal Government
@@ -21,62 +34,247 @@ modified: '2026-05-19'
 url: https://raw.githubusercontent.com/api-evangelist/library-of-congress/refs/heads/main/apis.yml
 specificationVersion: '0.19'
 apis:
-  - aid: library-of-congress:loc-gov-json-api
-    name: Library of Congress loc.gov JSON API
-    description: >-
-      The loc.gov JSON API returns structured JSON or YAML representations of the Library of Congress's online
-      collections, items, search results, and resource pages, enabling programmatic access to digital collections
-      metadata and content.
-    humanURL: https://www.loc.gov/apis/json-and-yaml/
-    baseURL: https://www.loc.gov
-    tags:
-      - Collections
-      - Library
-      - Metadata
-      - Search
-    properties:
-      - type: Documentation
-        url: https://www.loc.gov/apis/json-and-yaml/
-      - type: Reference
-        url: https://www.loc.gov/apis/json-and-yaml/requests/
-      - type: OpenAPI
-        url: openapi/library-of-congress-loc-gov-json-api-openapi.yml
-  - aid: library-of-congress:chronicling-america-api
-    name: Library of Congress Chronicling America API
-    description: >-
-      The Chronicling America API exposes historic American newspapers digitized through the National Digital Newspaper
-      Program, providing search and metadata access to newspaper pages, issues, and titles.
-    humanURL: https://chroniclingamerica.loc.gov/about/api/
-    baseURL: https://chroniclingamerica.loc.gov
-    tags:
-      - Historic
-      - Library
-      - Newspapers
-      - Search
-    properties:
-      - type: Documentation
-        url: https://chroniclingamerica.loc.gov/about/api/
-      - type: OpenAPI
-        url: openapi/library-of-congress-chronicling-america-api-openapi.yml
-  - aid: library-of-congress:congress-gov-api
-    name: Library of Congress Congress.gov API
-    description: >-
-      The Congress.gov API provides programmatic access to legislative information, including bills, laws, members,
-      committees, and Congressional Record content from the U.S. Congress.
-    humanURL: https://api.congress.gov/
-    baseURL: https://api.congress.gov/v3
-    tags:
-      - Bills
-      - Congress
-      - Legislative
-      - Members
-    properties:
-      - type: Documentation
-        url: https://github.com/LibraryOfCongress/api.congress.gov/
-      - type: Signup
-        url: https://api.congress.gov/sign-up/
-      - type: OpenAPI
-        url: openapi/library-of-congress-congress-gov-api-openapi.yml
+- aid: library-of-congress:library-of-congress-bills-api
+  name: Library of Congress Bills API
+  description: The Bills API from Library of Congress — 3 operation(s) for bills.
+  humanURL: https://www.loc.gov/apis/json-and-yaml/
+  baseURL: https://www.loc.gov
+  tags:
+  - Bills
+  properties:
+  - type: OpenAPI
+    url: openapi/library-of-congress-bills-api-openapi.yml
+  - type: Documentation
+    url: https://www.loc.gov/apis/json-and-yaml/
+  - type: Reference
+    url: https://www.loc.gov/apis/json-and-yaml/requests/
+  - type: Documentation
+    url: https://chroniclingamerica.loc.gov/about/api/
+  - type: Documentation
+    url: https://github.com/LibraryOfCongress/api.congress.gov/
+  - type: Signup
+    url: https://api.congress.gov/sign-up/
+- aid: library-of-congress:library-of-congress-collections-api
+  name: Library of Congress Collections API
+  description: The Collections API from Library of Congress — 2 operation(s) for collections.
+  humanURL: https://www.loc.gov/apis/json-and-yaml/
+  baseURL: https://www.loc.gov
+  tags:
+  - Collections
+  properties:
+  - type: OpenAPI
+    url: openapi/library-of-congress-collections-api-openapi.yml
+  - type: Documentation
+    url: https://www.loc.gov/apis/json-and-yaml/
+  - type: Reference
+    url: https://www.loc.gov/apis/json-and-yaml/requests/
+  - type: Documentation
+    url: https://chroniclingamerica.loc.gov/about/api/
+  - type: Documentation
+    url: https://github.com/LibraryOfCongress/api.congress.gov/
+  - type: Signup
+    url: https://api.congress.gov/sign-up/
+- aid: library-of-congress:library-of-congress-committees-api
+  name: Library of Congress Committees API
+  description: The Committees API from Library of Congress — 1 operation(s) for committees.
+  humanURL: https://www.loc.gov/apis/json-and-yaml/
+  baseURL: https://www.loc.gov
+  tags:
+  - Committees
+  properties:
+  - type: OpenAPI
+    url: openapi/library-of-congress-committees-api-openapi.yml
+  - type: Documentation
+    url: https://www.loc.gov/apis/json-and-yaml/
+  - type: Reference
+    url: https://www.loc.gov/apis/json-and-yaml/requests/
+  - type: Documentation
+    url: https://chroniclingamerica.loc.gov/about/api/
+  - type: Documentation
+    url: https://github.com/LibraryOfCongress/api.congress.gov/
+  - type: Signup
+    url: https://api.congress.gov/sign-up/
+- aid: library-of-congress:library-of-congress-congressional-record-api
+  name: Library of Congress Congressional Record API
+  description: >-
+    The Congressional Record API from Library of Congress — 1 operation(s) for congressional record.
+  humanURL: https://www.loc.gov/apis/json-and-yaml/
+  baseURL: https://www.loc.gov
+  tags:
+  - Congressional Record
+  properties:
+  - type: OpenAPI
+    url: openapi/library-of-congress-congressional-record-api-openapi.yml
+  - type: Documentation
+    url: https://www.loc.gov/apis/json-and-yaml/
+  - type: Reference
+    url: https://www.loc.gov/apis/json-and-yaml/requests/
+  - type: Documentation
+    url: https://chroniclingamerica.loc.gov/about/api/
+  - type: Documentation
+    url: https://github.com/LibraryOfCongress/api.congress.gov/
+  - type: Signup
+    url: https://api.congress.gov/sign-up/
+- aid: library-of-congress:library-of-congress-issues-api
+  name: Library of Congress Issues API
+  description: The Issues API from Library of Congress — 1 operation(s) for issues.
+  humanURL: https://www.loc.gov/apis/json-and-yaml/
+  baseURL: https://www.loc.gov
+  tags:
+  - Issues
+  properties:
+  - type: OpenAPI
+    url: openapi/library-of-congress-issues-api-openapi.yml
+  - type: Documentation
+    url: https://www.loc.gov/apis/json-and-yaml/
+  - type: Reference
+    url: https://www.loc.gov/apis/json-and-yaml/requests/
+  - type: Documentation
+    url: https://chroniclingamerica.loc.gov/about/api/
+  - type: Documentation
+    url: https://github.com/LibraryOfCongress/api.congress.gov/
+  - type: Signup
+    url: https://api.congress.gov/sign-up/
+- aid: library-of-congress:library-of-congress-items-api
+  name: Library of Congress Items API
+  description: The Items API from Library of Congress — 1 operation(s) for items.
+  humanURL: https://www.loc.gov/apis/json-and-yaml/
+  baseURL: https://www.loc.gov
+  tags:
+  - Items
+  properties:
+  - type: OpenAPI
+    url: openapi/library-of-congress-items-api-openapi.yml
+  - type: Documentation
+    url: https://www.loc.gov/apis/json-and-yaml/
+  - type: Reference
+    url: https://www.loc.gov/apis/json-and-yaml/requests/
+  - type: Documentation
+    url: https://chroniclingamerica.loc.gov/about/api/
+  - type: Documentation
+    url: https://github.com/LibraryOfCongress/api.congress.gov/
+  - type: Signup
+    url: https://api.congress.gov/sign-up/
+- aid: library-of-congress:library-of-congress-laws-api
+  name: Library of Congress Laws API
+  description: The Laws API from Library of Congress — 1 operation(s) for laws.
+  humanURL: https://www.loc.gov/apis/json-and-yaml/
+  baseURL: https://www.loc.gov
+  tags:
+  - Laws
+  properties:
+  - type: OpenAPI
+    url: openapi/library-of-congress-laws-api-openapi.yml
+  - type: Documentation
+    url: https://www.loc.gov/apis/json-and-yaml/
+  - type: Reference
+    url: https://www.loc.gov/apis/json-and-yaml/requests/
+  - type: Documentation
+    url: https://chroniclingamerica.loc.gov/about/api/
+  - type: Documentation
+    url: https://github.com/LibraryOfCongress/api.congress.gov/
+  - type: Signup
+    url: https://api.congress.gov/sign-up/
+- aid: library-of-congress:library-of-congress-members-api
+  name: Library of Congress Members API
+  description: The Members API from Library of Congress — 2 operation(s) for members.
+  humanURL: https://www.loc.gov/apis/json-and-yaml/
+  baseURL: https://www.loc.gov
+  tags:
+  - Members
+  properties:
+  - type: OpenAPI
+    url: openapi/library-of-congress-members-api-openapi.yml
+  - type: Documentation
+    url: https://www.loc.gov/apis/json-and-yaml/
+  - type: Reference
+    url: https://www.loc.gov/apis/json-and-yaml/requests/
+  - type: Documentation
+    url: https://chroniclingamerica.loc.gov/about/api/
+  - type: Documentation
+    url: https://github.com/LibraryOfCongress/api.congress.gov/
+  - type: Signup
+    url: https://api.congress.gov/sign-up/
+- aid: library-of-congress:library-of-congress-pages-api
+  name: Library of Congress Pages API
+  description: The Pages API from Library of Congress — 1 operation(s) for pages.
+  humanURL: https://www.loc.gov/apis/json-and-yaml/
+  baseURL: https://www.loc.gov
+  tags:
+  - Pages
+  properties:
+  - type: OpenAPI
+    url: openapi/library-of-congress-pages-api-openapi.yml
+  - type: Documentation
+    url: https://www.loc.gov/apis/json-and-yaml/
+  - type: Reference
+    url: https://www.loc.gov/apis/json-and-yaml/requests/
+  - type: Documentation
+    url: https://chroniclingamerica.loc.gov/about/api/
+  - type: Documentation
+    url: https://github.com/LibraryOfCongress/api.congress.gov/
+  - type: Signup
+    url: https://api.congress.gov/sign-up/
+- aid: library-of-congress:library-of-congress-resources-api
+  name: Library of Congress Resources API
+  description: The Resources API from Library of Congress — 1 operation(s) for resources.
+  humanURL: https://www.loc.gov/apis/json-and-yaml/
+  baseURL: https://www.loc.gov
+  tags:
+  - Resources
+  properties:
+  - type: OpenAPI
+    url: openapi/library-of-congress-resources-api-openapi.yml
+  - type: Documentation
+    url: https://www.loc.gov/apis/json-and-yaml/
+  - type: Reference
+    url: https://www.loc.gov/apis/json-and-yaml/requests/
+  - type: Documentation
+    url: https://chroniclingamerica.loc.gov/about/api/
+  - type: Documentation
+    url: https://github.com/LibraryOfCongress/api.congress.gov/
+  - type: Signup
+    url: https://api.congress.gov/sign-up/
+- aid: library-of-congress:library-of-congress-search-api
+  name: Library of Congress Search API
+  description: The Search API from Library of Congress — 1 operation(s) for search.
+  humanURL: https://www.loc.gov/apis/json-and-yaml/
+  baseURL: https://www.loc.gov
+  tags:
+  - Search
+  properties:
+  - type: OpenAPI
+    url: openapi/library-of-congress-search-api-openapi.yml
+  - type: Documentation
+    url: https://www.loc.gov/apis/json-and-yaml/
+  - type: Reference
+    url: https://www.loc.gov/apis/json-and-yaml/requests/
+  - type: Documentation
+    url: https://chroniclingamerica.loc.gov/about/api/
+  - type: Documentation
+    url: https://github.com/LibraryOfCongress/api.congress.gov/
+  - type: Signup
+    url: https://api.congress.gov/sign-up/
+- aid: library-of-congress:library-of-congress-titles-api
+  name: Library of Congress Titles API
+  description: The Titles API from Library of Congress — 3 operation(s) for titles.
+  humanURL: https://www.loc.gov/apis/json-and-yaml/
+  baseURL: https://www.loc.gov
+  tags:
+  - Titles
+  properties:
+  - type: OpenAPI
+    url: openapi/library-of-congress-titles-api-openapi.yml
+  - type: Documentation
+    url: https://www.loc.gov/apis/json-and-yaml/
+  - type: Reference
+    url: https://www.loc.gov/apis/json-and-yaml/requests/
+  - type: Documentation
+    url: https://chroniclingamerica.loc.gov/about/api/
+  - type: Documentation
+    url: https://github.com/LibraryOfCongress/api.congress.gov/
+  - type: Signup
+    url: https://api.congress.gov/sign-up/
 common:
   - type: AgenticAccess
     url: agentic-access/library-of-congress-agentic-access.yml
