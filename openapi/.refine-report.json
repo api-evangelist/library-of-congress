@@ -1,0 +1,36 @@
+{
+  "provider": "library-of-congress",
+  "sources": [
+    "library-of-congress-bills-api-openapi.yml",
+    "library-of-congress-collections-api-openapi.yml",
+    "library-of-congress-committees-api-openapi.yml",
+    "library-of-congress-congressional-record-api-openapi.yml",
+    "library-of-congress-issues-api-openapi.yml",
+    "library-of-congress-items-api-openapi.yml",
+    "library-of-congress-laws-api-openapi.yml",
+    "library-of-congress-members-api-openapi.yml",
+    "library-of-congress-pages-api-openapi.yml",
+    "library-of-congress-resources-api-openapi.yml",
+    "library-of-congress-search-api-openapi.yml",
+    "library-of-congress-titles-api-openapi.yml"
+  ],
+  "outputs": [
+    "library-of-congress-bills-api-openapi.yml",
+    "library-of-congress-collections-api-openapi.yml",
+    "library-of-congress-committees-api-openapi.yml",
+    "library-of-congress-congressional-record-api-openapi.yml",
+    "library-of-congress-issues-api-openapi.yml",
+    "library-of-congress-items-api-openapi.yml",
+    "library-of-congress-laws-api-openapi.yml",
+    "library-of-congress-members-api-openapi.yml",
+    "library-of-congress-pages-api-openapi.yml",
+    "library-of-congress-resources-api-openapi.yml",
+    "library-of-congress-search-api-openapi.yml",
+    "library-of-congress-titles-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
