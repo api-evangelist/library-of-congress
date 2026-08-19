@@ -1,0 +1,128 @@
+{
+  "item": [
+    {
+      "id": "5aa85ec6-9289-4a74-937e-b73fb8ee36cb",
+      "name": "Committees",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f4c8d635-3ef1-4d80-9d52-f3980af0b90f",
+          "name": "List Committees",
+          "request": {
+            "name": "List Committees",
+            "description": {},
+            "url": {
+              "path": [
+                "committee"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "20"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a9ba498a-febb-4f4d-882d-501636a7beed",
+              "name": "Committees list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "committee"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"committees\": [\n    {\n      \"name\": \"string\",\n      \"chamber\": \"string\",\n      \"systemCode\": \"string\",\n      \"url\": \"https://MidmIqDgVaf.gdoYpibEs67lwcDpkhoU68lhLDxlWlbCmMa0yRzFqbLXVGMRh\"\n    },\n    {\n      \"name\": \"string\",\n      \"chamber\": \"string\",\n      \"systemCode\": \"string\",\n      \"url\": \"https://krjHHGqIzUs.lkyQZY.SQsPk6RqC4vZbr7Y8dm.tF+bHOBDTnkg2+flWSBikDPq17MiVcC\"\n    }\n  ],\n  \"pagination\": {\n    \"count\": 5837,\n    \"next\": \"string\",\n    \"prev\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://chroniclingamerica.loc.gov",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "a981c1d8-7803-4c94-985e-d35e0edd8cf6",
+    "name": "Library of Congress Chronicling America Bills Committees API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Chronicling America API exposes historic American newspapers digitized through the National Digital Newspaper Program, providing search and metadata access to newspaper pages, issues, and titles.\n\nContact Support:\n Name: Library of Congress",
+      "type": "text/plain"
+    }
+  }
+}

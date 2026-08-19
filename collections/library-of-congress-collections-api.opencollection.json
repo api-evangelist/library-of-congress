@@ -1,0 +1,60 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Library of Congress Chronicling America Bills Collections API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Collections",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Collections",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://chroniclingamerica.loc.gov/collections/",
+            "params": [
+              {
+                "name": "fo",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List the Library's digital collections."
+        },
+        {
+          "info": {
+            "name": "Get Collection",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://chroniclingamerica.loc.gov/collections/:name/",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Collection slug."
+              },
+              {
+                "name": "fo",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve metadata and items for a specific collection."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

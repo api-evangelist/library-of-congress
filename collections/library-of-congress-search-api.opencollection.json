@@ -1,0 +1,61 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Library of Congress Chronicling America Bills Search API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Search",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search loc.gov",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://chroniclingamerica.loc.gov/search/",
+            "params": [
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Search query string."
+              },
+              {
+                "name": "fo",
+                "value": "",
+                "type": "query",
+                "description": "Response format (json or yaml)."
+              },
+              {
+                "name": "c",
+                "value": "",
+                "type": "query",
+                "description": "Number of results per page."
+              },
+              {
+                "name": "sp",
+                "value": "",
+                "type": "query",
+                "description": "Page number of results."
+              },
+              {
+                "name": "at",
+                "value": "",
+                "type": "query",
+                "description": "Limit response to specified attributes (comma-separated)."
+              }
+            ]
+          },
+          "docs": "Search across the loc.gov website and digital collections."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,298 @@
+{
+  "item": [
+    {
+      "id": "483ffd4b-f69f-4804-87d4-f2c6c786c519",
+      "name": "Titles",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c9856a2d-7a31-4b9b-98eb-5034731307e3",
+          "name": "Search Titles",
+          "request": {
+            "name": "Search Titles",
+            "description": {
+              "content": "Search newspaper titles by name, place, or other facets.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "search",
+                "titles",
+                "results",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "terms",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "state",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                },
+                {
+                  "disabled": false,
+                  "key": "rows",
+                  "value": "20"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "77b1f474-5afd-4c4d-960e-3688fcc0b933",
+              "name": "Title search results",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "search",
+                    "titles",
+                    "results",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "terms",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "state",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "rows",
+                      "value": "20"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"lccn\": \"string\",\n      \"name\": \"string\",\n      \"place_of_publication\": \"string\",\n      \"start_year\": \"string\",\n      \"end_year\": \"string\",\n      \"url\": \"http://qOMCgkpiZaXcpVAWDbLvOobIaZMQVO.wxgN6x3Rvb3NrLBgJjviwqeb--j-mt-JMKoy3ytTFu0QkFyDPc8\"\n    },\n    {\n      \"lccn\": \"string\",\n      \"name\": \"string\",\n      \"place_of_publication\": \"string\",\n      \"start_year\": \"string\",\n      \"end_year\": \"string\",\n      \"url\": \"http://ZgjwwTILcJkwhMYncxmnwwinTCv.xmx,Trs4vwubA4i8O67BPt6RTcUr-2vysCQsopCbGPRJaapmUD\"\n    }\n  ],\n  \"totalItems\": 1271\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "38ff9796-b3b1-48f6-9a95-e5e4606018a6",
+          "name": "Get Title",
+          "request": {
+            "name": "Get Title",
+            "description": {
+              "content": "Retrieve metadata for a newspaper title by LCCN.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "lccn",
+                "{{lccn}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "be996668-8534-4915-8eea-445ea1342662",
+              "name": "Title metadata",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "lccn",
+                    "{{lccn}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"lccn\": \"string\",\n  \"name\": \"string\",\n  \"place_of_publication\": \"string\",\n  \"start_year\": \"string\",\n  \"end_year\": \"string\",\n  \"url\": \"http://LuVQPR.stvYm7Q2fwbCvZ6eHXlD5JAGqYb1eH4aWZhb5RwlCLtdXtnpmjoUylYYM+MvEiODSNhlAKcSLiTsvrvkWY\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "98bad5f4-2c9f-447a-8661-f8c878337741",
+          "name": "List Newspapers",
+          "request": {
+            "name": "List Newspapers",
+            "description": {
+              "content": "List all newspaper titles with digitized content.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "newspapers.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "76bdf0c3-c236-415f-ae54-55f1d343aeb5",
+              "name": "Newspaper list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "newspapers.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"newspapers\": [\n    {\n      \"lccn\": \"string\",\n      \"name\": \"string\",\n      \"place_of_publication\": \"string\",\n      \"start_year\": \"string\",\n      \"end_year\": \"string\",\n      \"url\": \"http://jpqGWxMLVzICAtWayUbzecPJYCogrLfj.grpfgDUDjB4b,fLAGW3-Uv0jK8Dm9RkE\"\n    },\n    {\n      \"lccn\": \"string\",\n      \"name\": \"string\",\n      \"place_of_publication\": \"string\",\n      \"start_year\": \"string\",\n      \"end_year\": \"string\",\n      \"url\": \"https://XpUhapltlCbaZcLZgsfzdUvAu.ubjwxEjePdi5HKmV1XWC0t7dJzpbx7iEBoBkSoGMKz9GGFXPSqpRAydfYlYAUdL\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://chroniclingamerica.loc.gov",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) Library of Congress Control Number.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "lccn"
+    }
+  ],
+  "info": {
+    "_postman_id": "4ebbb0cb-fa5d-44f7-89a3-501e4d2aa0c2",
+    "name": "Library of Congress Chronicling America Bills Titles API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Chronicling America API exposes historic American newspapers digitized through the National Digital Newspaper Program, providing search and metadata access to newspaper pages, issues, and titles.\n\nContact Support:\n Name: Library of Congress",
+      "type": "text/plain"
+    }
+  }
+}

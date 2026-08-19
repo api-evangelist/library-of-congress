@@ -1,0 +1,127 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Library of Congress Chronicling America Bills API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Bills",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Bills",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://chroniclingamerica.loc.gov/bill",
+            "params": [
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fromDateTime",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "toDateTime",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a list of bills sorted by date of latest action."
+        },
+        {
+          "info": {
+            "name": "List Bills by Congress and Type",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://chroniclingamerica.loc.gov/bill/:congress/:billType",
+            "params": [
+              {
+                "name": "congress",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "billType",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List Bills by Congress and Type"
+        },
+        {
+          "info": {
+            "name": "Get Bill",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://chroniclingamerica.loc.gov/bill/:congress/:billType/:billNumber",
+            "params": [
+              {
+                "name": "congress",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "billType",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "billNumber",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Bill"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

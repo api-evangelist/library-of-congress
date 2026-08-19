@@ -1,0 +1,156 @@
+{
+  "item": [
+    {
+      "id": "37bcf446-c472-4c38-8b0e-94e4d7e6d80a",
+      "name": "Search",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7197986d-7e05-49fe-a1b0-d07cf11aaf31",
+          "name": "Search loc.gov",
+          "request": {
+            "name": "Search loc.gov",
+            "description": {
+              "content": "Search across the loc.gov website and digital collections.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "search",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>",
+                  "description": "Search query string."
+                },
+                {
+                  "disabled": false,
+                  "key": "fo",
+                  "value": "json",
+                  "description": "Response format (json or yaml)."
+                },
+                {
+                  "disabled": false,
+                  "key": "c",
+                  "value": "25",
+                  "description": "Number of results per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "sp",
+                  "value": "<integer>",
+                  "description": "Page number of results."
+                },
+                {
+                  "disabled": false,
+                  "key": "at",
+                  "value": "<string>",
+                  "description": "Limit response to specified attributes (comma-separated)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d08efc91-cd3c-4f24-bec4-30a8f7eaa127",
+              "name": "Search results",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "search",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fo",
+                      "value": "json"
+                    },
+                    {
+                      "key": "c",
+                      "value": "25"
+                    },
+                    {
+                      "key": "sp",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "at",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"results\": [\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"date\": \"string\",\n      \"url\": \"https://kZeMWYajzPEJaLHqZqI.etr7aUyU35nGOPyqPR+qDXyrh,RKC-suomLAsnH8nscS+Lmx\",\n      \"description\": [\n        \"string\",\n        \"string\"\n      ],\n      \"subject\": [\n        \"string\",\n        \"string\"\n      ],\n      \"original_format\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"date\": \"string\",\n      \"url\": \"http://bHKRvCWoNicUxGliFfAlCYtRaLOKn.eenejvvtlwnfwqwVm182xsSboKMeXyqdzIO1sCZCQqpiwGSZLZS14\",\n      \"description\": [\n        \"string\",\n        \"string\"\n      ],\n      \"subject\": [\n        \"string\",\n        \"string\"\n      ],\n      \"original_format\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"pagination\": {\n    \"current\": 9233,\n    \"total\": 9453,\n    \"of\": 1773\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://chroniclingamerica.loc.gov",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "f425815d-418f-4db3-a72c-dd45808f6264",
+    "name": "Library of Congress Chronicling America Bills Search API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Chronicling America API exposes historic American newspapers digitized through the National Digital Newspaper Program, providing search and metadata access to newspaper pages, issues, and titles.\n\nContact Support:\n Name: Library of Congress",
+      "type": "text/plain"
+    }
+  }
+}

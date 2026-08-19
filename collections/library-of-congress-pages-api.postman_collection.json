@@ -1,0 +1,184 @@
+{
+  "item": [
+    {
+      "id": "5ed99706-9289-470c-a3a4-a5c7bc1663f6",
+      "name": "Pages",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0ea05f4f-ef51-4e70-912a-2d483a4ba7a6",
+          "name": "Search Pages",
+          "request": {
+            "name": "Search Pages",
+            "description": {
+              "content": "Search digitized newspaper pages by keyword and facets.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "search",
+                "pages",
+                "results",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "andtext",
+                  "value": "<string>",
+                  "description": "Phrase to search within page text."
+                },
+                {
+                  "disabled": false,
+                  "key": "state",
+                  "value": "<string>",
+                  "description": "U.S. state filter."
+                },
+                {
+                  "disabled": false,
+                  "key": "dateFilterType",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "date1",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "date2",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                },
+                {
+                  "disabled": false,
+                  "key": "rows",
+                  "value": "20"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2e558750-3f61-4b4f-8a2b-b0d4ac4b7f00",
+              "name": "Page search results",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "search",
+                    "pages",
+                    "results",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "andtext",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "state",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dateFilterType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "date1",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "date2",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "rows",
+                      "value": "20"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"id\": \"string\",\n      \"url\": \"http://Zv.npvlNORyO1pEIU.Askhst9ZLSW9\",\n      \"title\": \"string\",\n      \"date\": \"string\",\n      \"sequence\": 2661,\n      \"ocr_eng\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"url\": \"https://gqomCsnWkOVsgPyi.uvkfZvMPGCaVlOdUKZr927sFAaNbCkXK3rAg\",\n      \"title\": \"string\",\n      \"date\": \"string\",\n      \"sequence\": 2781,\n      \"ocr_eng\": \"string\"\n    }\n  ],\n  \"totalItems\": 8662,\n  \"startIndex\": 2649,\n  \"endIndex\": 5968\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://chroniclingamerica.loc.gov",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "7b21b1d6-1f44-45d8-ab5c-57a658a2b613",
+    "name": "Library of Congress Chronicling America Bills Pages API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Chronicling America API exposes historic American newspapers digitized through the National Digital Newspaper Program, providing search and metadata access to newspaper pages, issues, and titles.\n\nContact Support:\n Name: Library of Congress",
+      "type": "text/plain"
+    }
+  }
+}

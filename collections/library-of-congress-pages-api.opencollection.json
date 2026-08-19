@@ -1,0 +1,73 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Library of Congress Chronicling America Bills Pages API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Pages",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search Pages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://chroniclingamerica.loc.gov/search/pages/results/",
+            "params": [
+              {
+                "name": "andtext",
+                "value": "",
+                "type": "query",
+                "description": "Phrase to search within page text."
+              },
+              {
+                "name": "state",
+                "value": "",
+                "type": "query",
+                "description": "U.S. state filter."
+              },
+              {
+                "name": "dateFilterType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "date1",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "date2",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "rows",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search digitized newspaper pages by keyword and facets."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

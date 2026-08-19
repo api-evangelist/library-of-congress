@@ -1,0 +1,407 @@
+{
+  "item": [
+    {
+      "id": "b8ca1d72-12b9-4ab6-ad1c-aadd9b6b8bd8",
+      "name": "Bills",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b47224d4-3e4a-4cd4-a4c9-3df17afedf63",
+          "name": "List Bills",
+          "request": {
+            "name": "List Bills",
+            "description": {
+              "content": "Returns a list of bills sorted by date of latest action.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "bill"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "20"
+                },
+                {
+                  "disabled": false,
+                  "key": "fromDateTime",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "toDateTime",
+                  "value": "<dateTime>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "64e3809b-2032-4d64-a6c4-2ae1e70644b7",
+              "name": "List of bills",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bill"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    },
+                    {
+                      "key": "fromDateTime",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "toDateTime",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"bills\": [\n    {\n      \"congress\": 4129,\n      \"number\": \"string\",\n      \"type\": \"string\",\n      \"title\": \"string\",\n      \"originChamber\": \"string\",\n      \"introducedDate\": \"string\",\n      \"latestAction\": {\n        \"actionDate\": \"string\",\n        \"text\": \"string\"\n      },\n      \"url\": \"http://eTJx.qrtz-P3Uq,5diLJ-CkN7wx9sACI.Wh7QJ,Yv06SE,UA\"\n    },\n    {\n      \"congress\": 738,\n      \"number\": \"string\",\n      \"type\": \"string\",\n      \"title\": \"string\",\n      \"originChamber\": \"string\",\n      \"introducedDate\": \"string\",\n      \"latestAction\": {\n        \"actionDate\": \"string\",\n        \"text\": \"string\"\n      },\n      \"url\": \"http://KMSHNWaxLNqxRiGAfVbcEMkZbdRkajsI.zbWI.09Q8noVa,LCSw-h2FXXsf7h9MKhz-AuZkCyNzZmQNQ,XgPfdXXTjcS2c\"\n    }\n  ],\n  \"pagination\": {\n    \"count\": 4204,\n    \"next\": \"string\",\n    \"prev\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8562fd0f-192b-466b-802e-652f66b6d527",
+          "name": "List Bills by Congress and Type",
+          "request": {
+            "name": "List Bills by Congress and Type",
+            "description": {},
+            "url": {
+              "path": [
+                "bill",
+                ":congress",
+                ":billType"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "20"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "congress",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "billType",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c6029d75-099a-469b-a1f9-ded267c47b41",
+              "name": "List of bills",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bill",
+                    ":congress",
+                    ":billType"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "congress",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "billType",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"bills\": [\n    {\n      \"congress\": 4129,\n      \"number\": \"string\",\n      \"type\": \"string\",\n      \"title\": \"string\",\n      \"originChamber\": \"string\",\n      \"introducedDate\": \"string\",\n      \"latestAction\": {\n        \"actionDate\": \"string\",\n        \"text\": \"string\"\n      },\n      \"url\": \"http://eTJx.qrtz-P3Uq,5diLJ-CkN7wx9sACI.Wh7QJ,Yv06SE,UA\"\n    },\n    {\n      \"congress\": 738,\n      \"number\": \"string\",\n      \"type\": \"string\",\n      \"title\": \"string\",\n      \"originChamber\": \"string\",\n      \"introducedDate\": \"string\",\n      \"latestAction\": {\n        \"actionDate\": \"string\",\n        \"text\": \"string\"\n      },\n      \"url\": \"http://KMSHNWaxLNqxRiGAfVbcEMkZbdRkajsI.zbWI.09Q8noVa,LCSw-h2FXXsf7h9MKhz-AuZkCyNzZmQNQ,XgPfdXXTjcS2c\"\n    }\n  ],\n  \"pagination\": {\n    \"count\": 4204,\n    \"next\": \"string\",\n    \"prev\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d6809eb3-7579-412c-9032-e611e65a60cb",
+          "name": "Get Bill",
+          "request": {
+            "name": "Get Bill",
+            "description": {},
+            "url": {
+              "path": [
+                "bill",
+                ":congress",
+                ":billType",
+                ":billNumber"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "format",
+                  "value": "json"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "congress",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "billType",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "billNumber",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "deceea1e-75b7-4b5d-aa13-5377d4dc9bb6",
+              "name": "Bill detail",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bill",
+                    ":congress",
+                    ":billType",
+                    ":billNumber"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "format",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "congress",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "billType",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "billNumber",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"congress\": 1793,\n  \"number\": \"string\",\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"originChamber\": \"string\",\n  \"introducedDate\": \"string\",\n  \"latestAction\": {\n    \"actionDate\": \"string\",\n    \"text\": \"string\"\n  },\n  \"url\": \"http://dSejBLznYakGmnMlAqYGmJAsep.tfOCL9b72+Cyfjpnef-beaomvZQer6sOckTDutRK\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://chroniclingamerica.loc.gov",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "2b346c57-dc73-4bbd-8adf-4b445c37f2ff",
+    "name": "Library of Congress Chronicling America Bills API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Chronicling America API exposes historic American newspapers digitized through the National Digital Newspaper Program, providing search and metadata access to newspaper pages, issues, and titles.\n\nContact Support:\n Name: Library of Congress",
+      "type": "text/plain"
+    }
+  }
+}

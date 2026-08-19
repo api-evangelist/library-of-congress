@@ -1,0 +1,148 @@
+{
+  "item": [
+    {
+      "id": "31860dbd-b6d3-45a2-b4b9-144398e88197",
+      "name": "Issues",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "dbdec8c3-c426-4b2e-b62a-3b0b3986f6c3",
+          "name": "Get Issue",
+          "request": {
+            "name": "Get Issue",
+            "description": {
+              "content": "Retrieve metadata for a single issue of a newspaper.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "lccn",
+                ":lccn",
+                ":date",
+                "ed-{{edition}}.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "lccn",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "date",
+                  "description": "(Required) Issue date in YYYY-MM-DD format."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6a0574b8-b031-413b-8979-c77452b2077d",
+              "name": "Issue metadata",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "lccn",
+                    ":lccn",
+                    ":date",
+                    "ed-{{edition}}.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "lccn",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "date",
+                      "description": "(Required) Issue date in YYYY-MM-DD format."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"date_issued\": \"string\",\n  \"edition\": 5024,\n  \"title\": {},\n  \"pages\": [\n    {\n      \"id\": \"string\",\n      \"url\": \"https://lL.vlgxV+w6KEnb.\",\n      \"title\": \"string\",\n      \"date\": \"string\",\n      \"sequence\": 5949,\n      \"ocr_eng\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"url\": \"http://GUZ.meqSrbm6IgdpaE4MmHDaih+AvzjSgAR5NHveS.tQ8NXI\",\n      \"title\": \"string\",\n      \"date\": \"string\",\n      \"sequence\": 7442,\n      \"ocr_eng\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://chroniclingamerica.loc.gov",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<integer>",
+      "key": "edition"
+    }
+  ],
+  "info": {
+    "_postman_id": "23ec4ccc-3ba8-4f3a-bd8f-c19cb992b306",
+    "name": "Library of Congress Chronicling America Bills Issues API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Chronicling America API exposes historic American newspapers digitized through the National Digital Newspaper Program, providing search and metadata access to newspaper pages, issues, and titles.\n\nContact Support:\n Name: Library of Congress",
+      "type": "text/plain"
+    }
+  }
+}

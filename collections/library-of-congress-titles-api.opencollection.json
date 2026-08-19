@@ -1,0 +1,81 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Library of Congress Chronicling America Bills Titles API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Titles",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search Titles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://chroniclingamerica.loc.gov/search/titles/results/",
+            "params": [
+              {
+                "name": "terms",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "state",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "rows",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search newspaper titles by name, place, or other facets."
+        },
+        {
+          "info": {
+            "name": "Get Title",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://chroniclingamerica.loc.gov/lccn/:lccn.json",
+            "params": [
+              {
+                "name": "lccn",
+                "value": "",
+                "type": "path",
+                "description": "Library of Congress Control Number."
+              }
+            ]
+          },
+          "docs": "Retrieve metadata for a newspaper title by LCCN."
+        },
+        {
+          "info": {
+            "name": "List Newspapers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://chroniclingamerica.loc.gov/newspapers.json"
+          },
+          "docs": "List all newspaper titles with digitized content."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

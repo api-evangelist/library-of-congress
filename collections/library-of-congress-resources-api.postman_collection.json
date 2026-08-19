@@ -1,0 +1,133 @@
+{
+  "item": [
+    {
+      "id": "099151f5-c0f5-47dd-84e6-00384b25920a",
+      "name": "Resources",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "03b22d3a-0eb7-434d-b6d7-b089b91a12c9",
+          "name": "Get Resource",
+          "request": {
+            "name": "Get Resource",
+            "description": {
+              "content": "Retrieve a digitized resource record.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "resource",
+                ":resourceId",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fo",
+                  "value": "json"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "93a7e44f-fe20-4a49-9922-3c64a566710d",
+              "name": "Resource record",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "resource",
+                    ":resourceId",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fo",
+                      "value": "json"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"url\": \"https://wSPeML.jurVyB6LRUIUeuUTPC+mbPD.S2-kBRhPhV\",\n  \"files\": [\n    {\n      \"url\": \"http://RQjESNLeNYgJVhimFVoGQIzqXBioUMGmN.notbAJ,JJ7i.nEVLlJG8+bhtygzTB06NCJsheDegDS\",\n      \"mimetype\": \"string\"\n    },\n    {\n      \"url\": \"https://HEMegyWhWgdjyoJziEwfhAlnAaEbkVd.lisCwLojZNOfiwWAZ0yZz+piT6BjPZ9qnVJ4o\",\n      \"mimetype\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://chroniclingamerica.loc.gov",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b9faf95c-a4ea-45c1-8092-d8c22ada44ec",
+    "name": "Library of Congress Chronicling America Bills Resources API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Chronicling America API exposes historic American newspapers digitized through the National Digital Newspaper Program, providing search and metadata access to newspaper pages, issues, and titles.\n\nContact Support:\n Name: Library of Congress",
+      "type": "text/plain"
+    }
+  }
+}
