@@ -24,6 +24,13 @@ access: Public
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/library-of-congress.png
 tags:
   - Cultural Heritage
+  - Federal-Government
+  - Library
+  - Legislative
+  - Newspapers
+  - Search
+tags_raw:
+  - Cultural Heritage
   - Federal Government
   - Library
   - Legislative
@@ -60,6 +67,8 @@ apis:
   humanURL: https://www.loc.gov/apis/json-and-yaml/
   baseURL: https://www.loc.gov
   tags:
+  - Collection
+  tags_raw:
   - Collections
   properties:
   - type: OpenAPI
@@ -141,6 +150,8 @@ apis:
   humanURL: https://www.loc.gov/apis/json-and-yaml/
   baseURL: https://www.loc.gov
   tags:
+  - Item
+  tags_raw:
   - Items
   properties:
   - type: OpenAPI
