@@ -6,6 +6,18 @@ description: >-
   the U.S. Congress and the home of the U.S. Copyright Office. The Library publishes a suite of public APIs that expose
   its catalog, digital collections, historic newspapers, and legislative information.
 type: Index
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
