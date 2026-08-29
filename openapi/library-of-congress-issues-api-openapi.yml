@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Library of Congress Chronicling America Bills Issues API
+  title: Library of Congress Chronicling America Issues API
   description: The Chronicling America API exposes historic American newspapers digitized through the National Digital Newspaper Program, providing search and metadata access to newspaper pages, issues, and titles.
   version: 1.0.0
   contact:
@@ -45,19 +45,6 @@ paths:
                 $ref: '#/components/schemas/Issue'
 components:
   schemas:
-    Issue:
-      type: object
-      properties:
-        date_issued:
-          type: string
-        edition:
-          type: integer
-        title:
-          type: object
-        pages:
-          type: array
-          items:
-            $ref: '#/components/schemas/Page'
     Page:
       type: object
       properties:
@@ -74,3 +61,16 @@ components:
           type: integer
         ocr_eng:
           type: string
+    Issue:
+      type: object
+      properties:
+        date_issued:
+          type: string
+        edition:
+          type: integer
+        title:
+          type: object
+        pages:
+          type: array
+          items:
+            $ref: '#/components/schemas/Page'

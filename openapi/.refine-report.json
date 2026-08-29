@@ -1,36 +1,57 @@
 {
   "provider": "library-of-congress",
   "sources": [
-    "library-of-congress-bills-api-openapi.yml",
-    "library-of-congress-collections-api-openapi.yml",
-    "library-of-congress-committees-api-openapi.yml",
-    "library-of-congress-congressional-record-api-openapi.yml",
-    "library-of-congress-issues-api-openapi.yml",
-    "library-of-congress-items-api-openapi.yml",
-    "library-of-congress-laws-api-openapi.yml",
-    "library-of-congress-members-api-openapi.yml",
-    "library-of-congress-pages-api-openapi.yml",
-    "library-of-congress-resources-api-openapi.yml",
-    "library-of-congress-search-api-openapi.yml",
-    "library-of-congress-titles-api-openapi.yml"
+    "_original/library-of-congress-chronicling-america-api-openapi.yml",
+    "_original/library-of-congress-congress-gov-api-openapi.yml",
+    "_original/library-of-congress-loc-gov-json-api-openapi.yml"
   ],
   "outputs": [
+    "library-of-congress-issues-api-openapi.yml",
+    "library-of-congress-pages-api-openapi.yml",
+    "library-of-congress-titles-api-openapi.yml",
     "library-of-congress-bills-api-openapi.yml",
-    "library-of-congress-collections-api-openapi.yml",
     "library-of-congress-committees-api-openapi.yml",
     "library-of-congress-congressional-record-api-openapi.yml",
-    "library-of-congress-issues-api-openapi.yml",
-    "library-of-congress-items-api-openapi.yml",
     "library-of-congress-laws-api-openapi.yml",
     "library-of-congress-members-api-openapi.yml",
-    "library-of-congress-pages-api-openapi.yml",
+    "library-of-congress-collections-api-openapi.yml",
+    "library-of-congress-items-api-openapi.yml",
     "library-of-congress-resources-api-openapi.yml",
-    "library-of-congress-search-api-openapi.yml",
-    "library-of-congress-titles-api-openapi.yml"
+    "library-of-congress-search-api-openapi.yml"
   ],
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (3 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "library-of-congress-chronicling-america-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "library-of-congress-chronicling-america-api-openapi.yml: declared missing tag: Issues",
+    "library-of-congress-chronicling-america-api-openapi.yml: declared missing tag: Pages",
+    "library-of-congress-chronicling-america-api-openapi.yml: declared missing tag: Titles",
+    "library-of-congress-congress-gov-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "library-of-congress-congress-gov-api-openapi.yml: declared missing tag: Bills",
+    "library-of-congress-congress-gov-api-openapi.yml: declared missing tag: Committees",
+    "library-of-congress-congress-gov-api-openapi.yml: declared missing tag: Congressional Record",
+    "library-of-congress-congress-gov-api-openapi.yml: declared missing tag: Laws",
+    "library-of-congress-congress-gov-api-openapi.yml: declared missing tag: Members",
+    "library-of-congress-loc-gov-json-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "library-of-congress-loc-gov-json-api-openapi.yml: declared missing tag: Collections",
+    "library-of-congress-loc-gov-json-api-openapi.yml: declared missing tag: Items",
+    "library-of-congress-loc-gov-json-api-openapi.yml: declared missing tag: Resources",
+    "library-of-congress-loc-gov-json-api-openapi.yml: declared missing tag: Search"
+  ],
+  "skipped": [
+    "library-of-congress-bills-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "library-of-congress-collections-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "library-of-congress-committees-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "library-of-congress-congressional-record-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "library-of-congress-issues-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "library-of-congress-items-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "library-of-congress-laws-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "library-of-congress-members-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "library-of-congress-pages-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "library-of-congress-resources-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "library-of-congress-search-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "library-of-congress-titles-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

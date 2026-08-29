@@ -1,14 +1,16 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Library of Congress Chronicling America Bills Congressional Record API
-  description: The Chronicling America API exposes historic American newspapers digitized through the National Digital Newspaper Program, providing search and metadata access to newspaper pages, issues, and titles.
+  title: Library of Congress Congress.gov Congressional Record API
+  description: The Congress.gov API provides programmatic access to legislative information from the U.S. Congress, including bills, laws, members, committees, amendments, and Congressional Record content. An API key is required for access.
   version: 1.0.0
   contact:
     name: Library of Congress
-    url: https://chroniclingamerica.loc.gov/about/api/
+    url: https://api.congress.gov/
 servers:
-- url: https://chroniclingamerica.loc.gov
+- url: https://api.congress.gov/v3
   description: Production
+security:
+- ApiKeyAuth: []
 tags:
 - name: Congressional Record
 paths:
@@ -37,6 +39,13 @@ components:
       schema:
         type: integer
         default: 0
+    Limit:
+      name: limit
+      in: query
+      schema:
+        type: integer
+        default: 20
+        maximum: 250
     Format:
       name: format
       in: query
@@ -46,10 +55,8 @@ components:
         - json
         - xml
         default: json
-    Limit:
-      name: limit
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
       in: query
-      schema:
-        type: integer
-        default: 20
-        maximum: 250
+      name: api_key
