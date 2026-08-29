@@ -1,0 +1,26 @@
+slug: library-of-congress
+provider: Library of Congress
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Public Sector & Government
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: Bills
+  spec_file: library-of-congress-bills-api-openapi.yml
+  capability_id: BC-3210
+  capability_id_l1: BC-3210
+  capability_name: Legislative & Regulatory Drafting Management
+  confidence: 0.7
+  evidence: GET /bill/{congress}/{billType}/{billNumber}  getBill  Get Bill; "programmatic access to legislative
+    information from the U.S. Congress, including bills, laws, members, committees, amendments"
+  reason: Operations expose bills of the U.S. Congress, which sits squarely in the legislative instrument
+    domain of BC-3210. Not confident which sub-capability applies (drafting vs. process coordination vs.
+    publication), since the API only reads bill records, so L1 only.
